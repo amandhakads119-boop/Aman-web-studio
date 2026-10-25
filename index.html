@@ -1,1084 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Aman Web Studio | Website Design & Digital Services</title>
-  <meta name="description" content="Aman Web Studio offers modern website design, portfolio websites, landing pages and digital services. Contact us on WhatsApp.">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Google Search Console Verification -->
-  <meta name="google-site-verification" content="oRcGKEJmW3h8Ul5tYeK4qqT45sJvpEhpA-eoQPygzSc" />
-
-  <style>
-    :root {
-      --purple: #7545f5;
-      --pink: #ed4da7;
-      --dark: #171329;
-      --muted: #6d687e;
-      --light: #f8f6ff;
-      --border: #eae5f5;
-      --white: #ffffff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
-      color: var(--dark);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input, select, textarea {
-      font: inherit;
-    }
-
-    button, .btn {
-      cursor: pointer;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    .gradient-text {
-      background: linear-gradient(100deg, var(--purple), var(--pink));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .section {
-      padding: 85px 0;
-    }
-
-    .section-heading {
-      max-width: 680px;
-      margin: 0 auto 42px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      color: var(--purple);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: clamp(29px, 4vw, 43px);
-      line-height: 1.2;
-      margin: 12px 0;
-      letter-spacing: -1px;
-    }
-
-    .section-heading p,
-    .muted {
-      color: var(--muted);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border: 0;
-      border-radius: 12px;
-      padding: 13px 20px;
-      font-weight: 700;
-      transition: transform .25s, box-shadow .25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 28px #7545f52b;
-    }
-
-    .btn-primary {
-      color: white;
-      background: linear-gradient(100deg, var(--purple), var(--pink));
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      background: white;
-    }
-
-    /* Navigation */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #ffffffed;
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid #eee9f7;
-    }
-
-    .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -.8px;
-    }
-
-    .logo span {
-      color: var(--purple);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .nav-links a:hover {
-      color: var(--purple);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 7px 12px;
-      font-size: 22px;
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      padding: 95px 0 85px;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 10% 10%, #f0e9ff 0, transparent 38%),
-        radial-gradient(ellipse at 90% 20%, #ffeaf5 0, transparent 34%),
-        white;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
-      border: 1px solid #e7ddff;
-      border-radius: 30px;
-      background: #ffffffb8;
-      color: #5c3ab5;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    .green-dot {
-      width: 8px;
-      height: 8px;
-      background: #25bb72;
-      border-radius: 50%;
-    }
-
-    .hero h1 {
-      font-size: clamp(39px, 5.5vw, 66px);
-      line-height: 1.08;
-      letter-spacing: -2.4px;
-      margin-bottom: 22px;
-    }
-
-    .hero-copy {
-      max-width: 550px;
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-note {
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .hero-art {
-      position: relative;
-      min-height: 365px;
-      display: grid;
-      place-items: center;
-    }
-
-    .art-glow {
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #bca5ff, #ffb8dc);
-      filter: blur(10px);
-      opacity: .6;
-    }
-
-    .browser-card {
-      position: relative;
-      width: min(100%, 390px);
-      padding: 15px;
-      background: white;
-      border: 1px solid #eee8fb;
-      border-radius: 20px;
-      box-shadow: 0 25px 70px #40207120;
-      transform: rotate(-2deg);
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .browser-top {
-      display: flex;
-      gap: 5px;
-      padding: 3px 0 14px;
-    }
-
-    .browser-top i {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #f0a4c9;
-    }
-
-    .browser-top i:nth-child(2) { background: #c8b4ff; }
-    .browser-top i:nth-child(3) { background: #a4e5c4; }
-
-    .mock-page {
-      min-height: 235px;
-      padding: 25px;
-      border-radius: 13px;
-      background: linear-gradient(140deg, #f4edff, #fff0f7);
-    }
-
-    .mock-label {
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: var(--purple);
-      font-weight: 900;
-    }
-
-    .mock-page h3 {
-      font-size: 30px;
-      line-height: 1.15;
-      margin: 16px 0;
-    }
-
-    .mock-page p {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .mock-pill {
-      display: inline-block;
-      background: linear-gradient(100deg, var(--purple), var(--pink));
-      color: white;
-      border-radius: 7px;
-      padding: 8px 13px;
-      font-size: 11px;
-      margin-top: 20px;
-    }
-
-    .floating-tag {
-      position: absolute;
-      padding: 12px 16px;
-      border-radius: 13px;
-      background: white;
-      border: 1px solid var(--border);
-      box-shadow: 0 12px 35px #40207112;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .tag-one { left: -5px; bottom: 34px; }
-    .tag-two { right: -3px; top: 30px; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(-2deg); }
-      50% { transform: translateY(-10px) rotate(0deg); }
-    }
-
-    /* Trust strip */
-    .trust-strip {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 22px 0;
-      background: #fff;
-    }
-
-    .trust-inner {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px 45px;
-      color: #514968;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    /* Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card,
-    .portfolio-card,
-    .price-card,
-    .contact-card {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: white;
-      transition: transform .25s, box-shadow .25s;
-    }
-
-    .service-card:hover,
-    .portfolio-card:hover,
-    .price-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px #36205d12;
-    }
-
-    .service-card {
-      padding: 27px;
-    }
-
-    .service-icon {
-      display: grid;
-      place-items: center;
-      width: 53px;
-      height: 53px;
-      margin-bottom: 19px;
-      border-radius: 15px;
-      background: linear-gradient(135deg, #f0eaff, #ffebf5);
-      font-size: 25px;
-    }
-
-    .service-card h3,
-    .portfolio-card h3 {
-      font-size: 19px;
-      margin-bottom: 8px;
-    }
-
-    .service-card p,
-    .portfolio-card p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .service-number {
-      margin-top: 22px;
-      font-size: 12px;
-      color: var(--purple);
-      font-weight: 900;
-    }
-
-    /* Portfolio */
-    .portfolio-section {
-      background: var(--light);
-    }
-
-    .portfolio-card {
-      overflow: hidden;
-    }
-
-    .portfolio-art {
-      min-height: 190px;
-      padding: 22px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #eee5ff, #ffe8f4);
-    }
-
-    .portfolio-art.two {
-      background: linear-gradient(135deg, #e1f6ef, #e9e8ff);
-    }
-
-    .portfolio-art.three {
-      background: linear-gradient(135deg, #fff0df, #f7e4ff);
-    }
-
-    .mini-window {
-      width: 85%;
-      padding: 14px;
-      border-radius: 11px;
-      background: white;
-      box-shadow: 0 10px 25px #31214b15;
-    }
-
-    .mini-line {
-      height: 7px;
-      margin: 8px 0;
-      border-radius: 8px;
-      background: #eee8fb;
-    }
-
-    .mini-line.short { width: 55%; }
-    .mini-line.color { width: 43%; background: linear-gradient(90deg, var(--purple), var(--pink)); }
-
-    .portfolio-info {
-      padding: 22px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 5px 9px;
-      margin-bottom: 10px;
-      background: #f3edff;
-      color: var(--purple);
-      border-radius: 7px;
-      font-size: 10px;
-      font-weight: 800;
-    }
-
-    /* Pricing */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .price-card {
-      padding: 27px;
-      position: relative;
-    }
-
-    .price-card.featured {
-      border: 2px solid var(--purple);
-      box-shadow: 0 15px 40px #7545f51c;
-    }
-
-    .popular {
-      position: absolute;
-      top: -13px;
-      right: 20px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      color: white;
-      background: linear-gradient(100deg, var(--purple), var(--pink));
-      font-size: 10px;
-      font-weight: 800;
-    }
-
-    .price-card h3 { font-size: 20px; }
-    .price-card .price-desc { color: var(--muted); font-size: 13px; margin: 8px 0 17px; }
-    .price-card .price { font-size: 32px; font-weight: 900; letter-spacing: -1px; }
-    .price-card .price small { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
-
-    .feature-list {
-      list-style: none;
-      margin: 20px 0 25px;
-    }
-
-    .feature-list li {
-      padding: 8px 0;
-      border-bottom: 1px solid #f0edf6;
-      font-size: 13px;
-      color: #504960;
-    }
-
-    .feature-list li::before {
-      content: "✓";
-      color: var(--purple);
-      font-weight: 900;
-      margin-right: 9px;
-    }
-
-    .price-card .btn {
-      width: 100%;
-    }
-
-    .pricing-note {
-      text-align: center;
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .about-visual {
-      min-height: 320px;
-      padding: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 25px;
-      background:
-        radial-gradient(circle at 20% 20%, #d8caff, transparent 40%),
-        linear-gradient(140deg, #f4edff, #ffedf6);
-    }
-
-    .about-logo {
-      width: 190px;
-      height: 190px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #ffffffc9;
-      border-radius: 35px;
-      background: #ffffffbd;
-      box-shadow: 0 20px 55px #6b42b51a;
-      text-align: center;
-    }
-
-    .about-logo strong {
-      display: block;
-      font-size: 42px;
-      line-height: 1.1;
-    }
-
-    .about-logo span {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--purple);
-    }
-
-    .about-copy p {
-      color: var(--muted);
-      margin: 15px 0;
-    }
-
-    .about-points {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 23px 0;
-    }
-
-    .about-point {
-      padding: 14px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .about-point strong {
-      display: block;
-      color: var(--purple);
-      font-size: 11px;
-      margin-bottom: 4px;
-    }
-
-    /* Contact */
-    .contact-section {
-      background: linear-gradient(140deg, #f7f3ff, #fff3f9);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .contact-copy h2 {
-      margin-top: 12px;
-    }
-
-    .contact-copy > p {
-      color: var(--muted);
-      margin: 15px 0 25px;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 13px;
-      margin: 20px 0;
-    }
-
-    .detail-icon {
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      width: 43px;
-      height: 43px;
-      border-radius: 12px;
-      background: white;
-      border: 1px solid var(--border);
-    }
-
-    .contact-detail small {
-      display: block;
-      color: var(--muted);
-    }
-
-    .contact-detail strong {
-      overflow-wrap: anywhere;
-    }
-
-    .contact-card {
-      padding: 28px;
-      box-shadow: 0 15px 45px #4a277b0c;
-    }
-
-    .contact-card h3 {
-      font-size: 23px;
-      margin-bottom: 5px;
-    }
-
-    .form-intro {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 13px;
-      color: var(--dark);
-      background: #fdfcff;
-      border: 1px solid #e7e1f1;
-      border-radius: 10px;
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--purple);
-      box-shadow: 0 0 0 3px #7545f515;
-    }
-
-    .form-group textarea {
-      min-height: 115px;
-      resize: vertical;
-    }
-
-    .contact-card .btn {
-      width: 100%;
-    }
-
-    .form-privacy {
-      font-size: 11px;
-      text-align: center;
-      color: var(--muted);
-      margin-top: 12px;
-    }
-
-    /* CTA */
-    .cta-wrap {
-      padding: 60px 0;
-    }
-
-    .cta {
-      padding: 45px 30px;
-      border-radius: 23px;
-      text-align: center;
-      color: white;
-      background: linear-gradient(115deg, #6940e8, #e84da4);
-    }
-
-    .cta h2 {
-      margin-top: 0;
-    }
-
-    .cta p {
-      color: #ffffffde;
-      margin: 10px auto 23px;
-      max-width: 550px;
-    }
-
-    .cta .btn {
-      color: var(--purple);
-      background: white;
-    }
-
-    /* Footer */
-    footer {
-      padding: 32px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-inner p {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .footer-links a:hover {
-      color: var(--purple);
-    }
-
-    /* Floating WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      z-index: 90;
-      right: 20px;
-      bottom: 20px;
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #20bd68;
-      color: white;
-      font-size: 27px;
-      box-shadow: 0 8px 25px #159b513b;
-      transition: transform .2s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.08);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    @media (max-width: 850px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid { gap: 25px; }
-      .hero-art { min-height: 330px; }
-      .about-grid { gap: 30px; }
-      .cards, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { gap: 25px; }
-      .about-visual { min-height: 260px; }
-    }
-
-    @media (max-width: 620px) {
-      .section { padding: 62px 0; }
-      .hero { padding: 65px 0 50px; }
-      .hero h1 { letter-spacing: -1.5px; }
-      .hero-copy { font-size: 15px; }
-      .hero-art { min-height: 290px; }
-      .browser-card { width: 88%; }
-      .mock-page { min-height: 195px; padding: 20px; }
-      .mock-page h3 { font-size: 25px; }
-      .floating-tag { font-size: 10px; padding: 9px 11px; }
-      .tag-one { left: 0; bottom: 10px; }
-      .tag-two { right: 0; top: 8px; }
-
-      .menu-toggle { display: block; }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        padding: 18px 5%;
-        background: white;
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 11px 0; }
-      .nav-links .btn { margin-top: 8px; }
-
-      .cards, .pricing-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; gap: 0; }
-      .contact-card { padding: 21px; }
-      .about-points { grid-template-columns: 1fr 1fr; }
-      .trust-inner { gap: 12px 22px; }
-      .cta { padding: 35px 20px; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="oRcGKEJmW3h8Ul5tYeK4qqT45sJvpEhpA-eoQPygzSc">
+<meta name="description" content="Aman Web Studio - Modern websites and creative design">
+<title>Aman Web Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#faf9ff;color:#19152f;line-height:1.7}
+img{width:100%;display:block;object-fit:cover}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 20px #2113440b}
+nav{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px 0;flex-wrap:wrap}
+.logo{font:bold 22px Manrope;color:#7854ff}
+nav a{font-size:14px;font-weight:700}
+nav a:hover{color:#ff62a7}
+.btn{display:inline-block;padding:12px 20px;border-radius:12px;background:linear-gradient(110deg,#7657ff,#ff65a9);color:white;font-weight:700;border:0;cursor:pointer}
+section{padding:75px 0}
+.hero{background:radial-gradient(circle at 80% 20%,#ffdfef,transparent 35%),linear-gradient(120deg,#f4f0ff,#fff);padding:70px 0}
+.hero-grid,.about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.2}
+h1{font-size:clamp(38px,6vw,65px);margin:20px 0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:15px}
+h3{font-size:21px;margin:12px 0}
+p{color:#716c82;margin:10px 0 20px}
+.gradient{background:linear-gradient(90deg,#7657ff,#ff65a9);background-clip:text;color:transparent}
+.hero img{height:420px;border-radius:25px;box-shadow:0 20px 50px #55408025}
+.heading{text-align:center;max-width:680px;margin:0 auto 35px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid #ebe6f5;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px #34205d09;transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 15px 35px #34205d17}
+.card img{height:220px}
+.card-body{padding:20px}
+.card-body p{font-size:14px;margin-bottom:5px}
+.services{background:white}
+.portfolio{background:#f3efff}
+.price{font:800 30px Manrope;color:#7657ff;margin:15px 0}
+.features{padding-left:20px;color:#716c82;font-size:14px;margin-bottom:22px}
+.features li{margin:8px 0}
+.about-grid img{height:390px;border-radius:25px}
+.contact{background:#19152f;color:white}
+.contact p{color:#d1cce2}
+form{background:white;color:#19152f;padding:25px;border-radius:20px}
+label{display:block;font-size:14px;font-weight:bold;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #e4dfef;border-radius:10px;font:inherit;background:#fdfcff}
+textarea{min-height:110px;resize:vertical}
+form button{width:100%;margin-top:18px}
+footer{background:#100e20;color:#fff;text-align:center;padding:25px}
+.whatsapp{position:fixed;bottom:18px;right:18px;background:#19b95c;color:white;padding:13px 17px;border-radius:30px;font-weight:bold;z-index:20;box-shadow:0 5px 20px #0002}
+@media(max-width:760px){
+ nav{justify-content:center;gap:13px}
+ .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .hero img{height:300px}
+ .cards{grid-template-columns:1fr}
+ .card img{height:240px}
+ section{padding:55px 0}
+ .about-grid img{height:300px}
+}
+</style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a class="logo" href="#home">Aman<span>.</span>Web Studio</a>
+<header>
+<nav class="container">
+<a class="logo" href="#home">Aman.Web Studio</a>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#pricing">Pricing</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-      <button class="menu-toggle" id="menuToggle"
-        type="button" aria-label="Open navigation menu"
-        aria-expanded="false">☰</button>
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<p>✦ WEBSITE PROJECTS & ENQUIRIES WELCOME</p>
+<h1>Your Ideas.<br><span class="gradient">Our Digital</span><br>Experience.</h1>
+<p>Welcome to Aman Web Studio. We create modern websites, beautiful layouts and mobile-friendly digital experiences for your brand or business.</p>
+<a class="btn" href="#contact">Start Your Project ↗</a>
+<a class="btn" href="#portfolio">View Portfolio</a>
+</div>
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop and web development workspace">
+</div>
+</section>
 
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#contact">Let's Talk ↗</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <div class="availability">
-            <span class="green-dot"></span>
-            Website projects & enquiries welcome
-          </div>
-
-          <h1>
-            Your Ideas.<br>
-            Our <span class="gradient-text">Digital</span><br>
-            Experience.
-          </h1>
-
-          <p class="hero-copy">
-            Welcome to Aman Web Studio. We help bring your ideas online
-            with modern website designs, clean layouts and mobile-friendly
-            experiences for your brand or business.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Start Your Project ↗</a>
-            <a class="btn btn-outline" 
-  href="#contact">Contact Me</a>
+<section class="services" id="services">
+<div class="container">
+<div class="heading"><h2>My <span class="gradient">Services</span></h2><p>Creative digital solutions for your business.</p></div>
+<div class="cards">
+<article class="card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Website design" loading="lazy">
+<div class="card-body"><h3>Web Design</h3><p>Modern, responsive and attractive website designs.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Web development team" loading="lazy">
+<div class="card-body"><h3>Web Development</h3><p>Fast and mobile-friendly websites for your business.</p></div>
+</article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=80" alt="Graphic design" loading="lazy">
+<div class="card-body"><h3>Graphic Design</h3><p>Creative banners, posters and social media designs.</p></div>
+</article>
 </div>
 </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+<div class="container">
+<div class="heading"><h2>My <span class="gradient">Portfolio</span></h2><p>Visual examples of digital projects and creative work.</p></div>
+<div class="cards">
+<article class="card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Business website concept" loading="lazy"><div class="card-body"><h3>Business Website</h3><p>Professional online presence for businesses.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=900&q=80" alt="Landing page concept" loading="lazy"><div class="card-body"><h3>Landing Page</h3><p>Modern layouts designed to engage visitors.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=900&q=80" alt="Creative graphic artwork" loading="lazy"><div class="card-body"><h3>Creative Design</h3><p>Eye-catching graphics for digital promotion.</p></div></article>
 </div>
-
-  </section>  <!-- Services Section -->  <section id="services" class="section">
-    <div class="container">
-      <h2>My Services</h2>
-      <p>Creative digital solutions for your business.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Web Design</h3>
-          <p>Modern, responsive and attractive website designs.</p>
-        </div>
-        <div class="card">
-          <h3>Web Development</h3>
-          <p>Fast and mobile-friendly websites for your business.</p>
-        </div>
-        <div class="card">
-          <h3>Graphic Design</h3>
-          <p>Creative banners, posters and social media designs.</p>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- Portfolio Section -->  <section id="portfolio" class="section">
-    <div class="container">
-      <h2>My Portfolio</h2>
-      <p>Some examples of my creative work.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Business Website</h3>
-          <p>A clean and professional website for a business.</p>
-        </div>
-        <div class="card">
-          <h3>Landing Page</h3>
-          <p>A modern landing page designed to attract customers.</p>
-        </div>
-        <div class="card">
-          <h3>Creative Design</h3>
-          <p>Beautiful visual designs for online promotion.</p>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- Pricing Section -->  <section id="pricing" class="section">
-    <div class="container">
-      <h2>Website Pricing</h2>
-      <p>Contact me to discuss a package that suits your needs.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Basic</h3>
-          <p>Simple personal or portfolio website.</p>
-          <h2>Starting ₹999</h2>
-          <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Basic%20website%20package.">Enquire Now</a>
-        </div>
-        <div class="card">
-          <h3>Standard</h3>
-          <p>Professional multi-section business website.</p>
-          <h2>Starting ₹2,999</h2>
-          <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Standard%20website%20package.">Enquire Now</a>
-        </div>
-        <div class="card">
-          <h3>Premium</h3>
-          <p>Advanced website with additional features.</p>
-          <h2>Starting ₹4,999</h2>
-          <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Premium%20website%20package.">Enquire Now</a>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- About Section -->  <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        Welcome to Aman Web Studio. I create modern, attractive and
-        responsive websites to help businesses build their online presence.
-      </p>
-    </div>
-  </section>  <!-- Contact Section -->  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>Fill in your details and send your enquiry directly through WhatsApp.</p>  <form id="contactForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="phone" placeholder="Your Phone Number" required>
-    <input type="text" id="service" placeholder="Service You Need" required>
-    <textarea id="message" placeholder="Tell me about your project" rows="5" required></textarea>
-    <button class="btn" type="submit">Send Enquiry on WhatsApp</button>
-  </form>
 </div>
+</section>
 
-  </section>  <!-- Call to Action -->  <section class="section">
-    <div class="container">
-      <h2>Let's Build Something Great!</h2>
-      <p>Have a project in mind? Let's discuss it today.</p>
-      <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20to%20discuss%20a%20website%20project.">Chat on WhatsApp</a>
-    </div>
-  </section>  <!-- Footer -->  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Aman Web Studio. All rights reserved.</p>
-    </div>
-  </footer>  <!-- Floating WhatsApp Button --><a class="whatsapp-float"
-href="https://wa.me/919669637311"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Chat with Aman on WhatsApp">
-WhatsApp
-</a>
+<section id="pricing">
+<div class="container">
+<div class="heading"><h2>Website <span class="gradient">Pricing</span></h2><p>Starting prices. Final cost depends on project requirements.</p></div>
+<div class="cards">
+<article class="card"><div class="card-body"><h3>Basic</h3><p>Personal or portfolio website.</p><div class="price">₹999</div><ul class="features"><li>Simple website layout</li><li>Mobile-friendly design</li><li>Contact links</li></ul><a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Basic%20website%20package.">Enquire Now ↗</a></div></article>
+<article class="card"><div class="card-body"><h3>Standard</h3><p>Professional small business website.</p><div class="price">₹2,999</div><ul class="features"><li>Multiple content sections</li><li>Responsive design</li><li>WhatsApp contact</li></ul><a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Standard%20website%20package.">Enquire Now ↗</a></div></article>
+<article class="card"><div class="card-body"><h3>Premium</h3><p>Website with custom features.</p><div class="price">₹4,999</div><ul class="features"><li>Custom visual design</li><li>Extra content sections</li><li>Project-specific features</li></ul><a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Premium%20website%20package.">Enquire Now ↗</a></div></article>
+</div>
+</div>
+</section>
 
-  <!-- JavaScript -->  <script>
-    // Automatically update the footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+<section class="services" id="about">
+<div class="container about-grid">
+<img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85" alt="Creative team collaborating" loading="lazy">
+<div><h2>About <span class="gradient">Aman Web Studio</span></h2><p>I create modern, attractive and responsive websites to help businesses build their online presence.</p><p>From personal portfolios to business websites, let's turn your idea into a polished digital experience.</p><a class="btn" href="#contact">Let's Work Together ↗</a></div>
+</div>
+</section>
 
-    // Contact form sends the details to WhatsApp
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+<section class="contact" id="contact">
+<div class="container contact-grid">
+<div><h2>Let's Build Something Great!</h2><p>Tell me about your project. Your enquiry will open in WhatsApp, ready for you to send.</p><p>WhatsApp: +91 96696 37311</p><p>Websites · Development · Graphic Design</p></div>
+<form id="contactForm">
+<h3>Contact Me</h3>
+<label for="name">Your Name</label><input id="name" required placeholder="Enter your name">
+<label for="phone">Your Phone Number</label><input id="phone" type="tel" required placeholder="Enter phone number">
+<label for="service">Service You Need</label>
+<select id="service" required><option value="">Select a service</option><option>Web Design</option><option>Web Development</option><option>Graphic Design</option><option>Basic Website</option><option>Standard Website</option><option>Premium Website</option><option>Other</option></select>
+<label for="message">Project Details</label><textarea id="message" required placeholder="Tell me about your project"></textarea>
+<button class="btn" type="submit">Send Enquiry on WhatsApp ↗</button>
+<p style="font-size:12px">WhatsApp will open so you can review and send the message.</p>
+</form>
+</div>
+</section>
+</main>
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const service = document.getElementById("service").value.trim();
-      const message = document.getElementById("message").value.trim();
+<footer>© <span id="year"></span> Aman Web Studio. All rights reserved.</footer>
+<a class="whatsapp" href="https://wa.me/919669637311" target="_blank" rel="noopener">WhatsApp ↗</a>
 
-      const whatsappMessage =
-        "Hello Aman Web Studio!%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Phone: " + encodeURIComponent(phone) + "%0A" +
-        "Service: " + encodeURIComponent(service) + "%0A" +
-        "Project Details: " + encodeURIComponent(message);
-
-      const whatsappURL = "https://wa.me/919669637311?text=" + whatsappMessage;
-      window.open(whatsappURL, "_blank");
-    });
-
-    // Mobile navigation menu, if the menu button exists
-    const menuButton = document.querySelector(".menu-toggle");
-    const navigation = document.querySelector("nav");
-
-    if (menuButton && navigation) {
-      menuButton.addEventListener("click", function() {
-        navigation.classList.toggle("active");
-      });
-
-      navigation.querySelectorAll("a").forEach(function(link) {
-        link.addEventListener("click", function() {
-          navigation.classList.remove("active");
-        });
-      });
-    }
-  </script></body>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("contactForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const service=document.getElementById("service").value;
+ const message=document.getElementById("message").value.trim();
+ const text=`Hello Aman Web Studio!%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0AProject: ${encodeURIComponent(message)}`;
+ window.open("https://wa.me/919669637311?text="+text,"_blank");
+});
+</script>
+</body>
 </html>
