@@ -2,307 +2,801 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- SEO: Google Search -->
+  <title>Aman Web Studio | Website Design & Development</title>
+  <meta name="description" content="Aman Web Studio offers creative website design, web development and graphic design services. Explore our portfolio, pricing and contact us on WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Aman Web Studio">
+  <meta name="theme-color" content="#10102b">
+
+  <!-- Google Search Console verification: preserve this tag -->
   <meta name="google-site-verification" content="oRcGKEJmW3h8Ul5tYeK4qqT45sJvpEhpA-eoQPygzSc">
 
-  <title>Aman Web Studio | Website Design & Development</title>
-  <meta name="description" content="Aman Web Studio creates modern, mobile-friendly websites, business websites and landing pages with responsive design and SEO basics.">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#100d22">
+  <!-- Social sharing / Open Graph -->
+  <meta property="og:title" content="Aman Web Studio | Website Design">
+  <meta property="og:description" content="Creative websites and digital design for your business. Contact Aman Web Studio today.">
+  <meta property="og:url" content="https://amandhakads119-boop.github.io/Aman-web-studio/">
+  <meta property="og:type" content="website">
+
   <link rel="canonical" href="https://amandhakads119-boop.github.io/Aman-web-studio/">
 
-  <meta property="og:title" content="Aman Web Studio">
-  <meta property="og:description" content="Modern websites and digital solutions for your business.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://amandhakads119-boop.github.io/Aman-web-studio/">
-
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    :root {
+      --bg: #0b0b1b;
+      --panel: #15152d;
+      --text: #f8f8ff;
+      --muted: #b9b9d1;
+      --purple: #9b5cff;
+      --pink: #ff4fa3;
+      --cyan: #65e6ff;
+      --border: rgba(255,255,255,.12);
+    }
+
+    * {
       margin: 0;
-      background: #100d22;
-      color: #f8f6ff;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
     }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1100px, 90%); margin: auto; }
-    header {
-      position: sticky; top: 0; z-index: 10;
-      background: #100d22f5;
-      border-bottom: 1px solid #ffffff18;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,11,27,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
     nav {
-      min-height: 72px; display: flex;
-      align-items: center; justify-content: space-between;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
-    .logo { font-size: 21px; font-weight: bold; }
-    .logo span, .gradient {
-      background: linear-gradient(90deg,#a78bfa,#ff73bd);
-      color: transparent; background-clip: text;
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
     }
-    .links { display: flex; align-items: center; gap: 20px; }
-    .links a:hover { color: #ff91d0; }
-    .menu { display: none; }
-    .btn {
-      display: inline-block; padding: 12px 20px;
-      border-radius: 30px; font-weight: bold;
-      background: linear-gradient(100deg,#bba7ff,#ff80c5);
-      color: #160f2b; border: 0; cursor: pointer;
+
+    .logo span {
+      color: var(--pink);
     }
-    .btn-outline {
-      color: white; background: #ffffff0c;
-      border: 1px solid #ffffff35;
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
     }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .94rem;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 11px;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
     .hero {
-      padding: 90px 0;
-      background: radial-gradient(ellipse at top right,#8c52d62c,transparent 55%);
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 85px 0;
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(155,92,255,.24), transparent 45%),
+        radial-gradient(ellipse at 85% 60%, rgba(255,79,163,.15), transparent 40%);
     }
-    .hero-grid {
-      display: grid; grid-template-columns: 1.1fr .9fr;
-      align-items: center; gap: 45px;
+
+    .hero-content {
+      max-width: 790px;
     }
-    .eyebrow { color: #c7b5ff; font-weight: bold; }
-    h1 { font-size: clamp(38px,6vw,66px); line-height: 1.12; margin: 18px 0; }
-    h2 { font-size: clamp(28px,4vw,42px); line-height: 1.2; }
-    p { color: #c5bfd9; }
-    .hero p { font-size: 18px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
-    .preview {
-      padding: 30px; border-radius: 25px;
-      min-height: 300px;
-      background: linear-gradient(145deg,#30234e,#1a1530);
-      border: 1px solid #ffffff20;
-      box-shadow: 0 25px 70px #0004;
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--cyan);
+      background: rgba(101,230,255,.08);
+      border: 1px solid rgba(101,230,255,.22);
+      border-radius: 50px;
+      padding: 6px 15px;
+      font-size: .85rem;
+      margin-bottom: 20px;
     }
-    .preview h2 { font-size: 32px; }
-    .preview-boxes { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 30px; }
-    .preview-boxes div { height: 70px; border-radius: 12px; background: #ffffff12; }
-    section { padding: 70px 0; }
-    .section-heading { text-align: center; max-width: 700px; margin: 0 auto 35px; }
-    .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.12rem;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 23px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .2s, opacity .2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: .92;
+    }
+
+    .btn-primary {
+      background: linear-gradient(100deg, var(--purple), var(--pink));
+      color: white;
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: rgba(255,255,255,.04);
+      color: white;
+    }
+
+    section {
+      padding: 82px 0;
+      scroll-margin-top: 76px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
     .card {
-      padding: 24px; border-radius: 18px;
-      background: #1a1630; border: 1px solid #ffffff16;
+      background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+      border: 1px solid var(--border);
+      padding: 27px;
+      border-radius: 18px;
+      transition: transform .25s, border-color .25s;
     }
-    .card h3 { margin-bottom: 8px; }
-    .icon { font-size: 30px; }
-    .price { font-size: 34px; font-weight: bold; }
-    .featured { border-color: #bba7ff; background: #251c41; }
-    ul { padding-left: 20px; color: #d7d1e8; }
-    li { margin: 8px 0; }
-    .about {
-      display: grid; grid-template-columns: .8fr 1.2fr;
-      gap: 30px; align-items: center;
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(155,92,255,.6);
     }
-    .about-art {
-      min-height: 240px; display: grid; place-items: center;
-      border-radius: 22px; font-size: 80px; font-weight: bold;
-      background: linear-gradient(140deg,#30234e,#21172f);
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(155,92,255,.15);
+      font-size: 1.6rem;
+      margin-bottom: 19px;
     }
-    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 22px; }
-    form { padding: 25px; border-radius: 20px; background: #1a1630; }
-    label { display: block; margin: 12px 0 5px; font-weight: bold; }
-    input, textarea, select {
-      width: 100%; padding: 13px; border-radius: 10px;
-      border: 1px solid #ffffff2c; background: #100d22;
-      color: white; font: inherit;
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
-    textarea { min-height: 110px; resize: vertical; }
-    form .btn { width: 100%; margin-top: 18px; }
-    .cta {
-      text-align: center; padding: 35px 20px;
-      border-radius: 22px; background: #211936;
-      border: 1px solid #ffffff1b;
+
+    .card p {
+      color: var(--muted);
+      font-size: .95rem;
     }
-    footer { border-top: 1px solid #ffffff1b; padding: 25px 0; color: #bcb5d0; }
-    .footer-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-    .whatsapp {
-      position: fixed; right: 18px; bottom: 18px; z-index: 15;
-      padding: 14px 17px; border-radius: 50px;
-      background: #25d366; color: #052e16; font-weight: bold;
-      box-shadow: 0 6px 25px #0005;
+
+    .portfolio-card {
+      overflow: hidden;
+      padding: 0;
     }
-    @media(max-width:800px) {
-      .hero-grid,.about,.contact-grid { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .hero { padding: 55px 0; }
-      .links { gap: 12px; }
+
+    .portfolio-art {
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      font-size: 3.5rem;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,79,163,.45), transparent 40%),
+        linear-gradient(135deg, #22224a, #17172d);
+      border-bottom: 1px solid var(--border);
     }
-    @media(max-width:620px) {
-      .menu { display: block; padding: 9px 12px; color: white; background: #241b3c; border: 1px solid #ffffff2a; border-radius: 8px; }
-      .links {
-        display: none; position: absolute; top: 72px; left: 0; right: 0;
-        padding: 18px 5%; background: #100d22;
-        flex-direction: column; align-items: stretch;
+
+    .portfolio-info {
+      padding: 23px;
+    }
+
+    .portfolio-info p {
+      margin-top: 6px;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 12px 0;
+    }
+
+    .price small {
+      font-size: .85rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin: 20px 0 25px;
+    }
+
+    .price-card li {
+      color: var(--muted);
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .price-card li::before {
+      content: "✓ ";
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    .featured {
+      border-color: var(--pink);
+      box-shadow: 0 0 35px rgba(255,79,163,.09);
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .about-visual {
+      min-height: 330px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(155,92,255,.4), transparent 45%),
+        radial-gradient(circle at 80% 75%, rgba(255,79,163,.28), transparent 40%),
+        var(--panel);
+    }
+
+    .about-visual strong {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-box {
+      max-width: 800px;
+      margin: auto;
+      background:
+        radial-gradient(circle at top left, rgba(155,92,255,.18), transparent 45%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: clamp(25px, 5vw, 48px);
+    }
+
+    .contact-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-box > p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      background: rgba(0,0,0,.2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 15px;
+      color: white;
+      font: inherit;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      border-color: var(--purple);
+    }
+
+    .contact-form select option {
+      background: var(--panel);
+    }
+
+    .contact-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 90;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 1.8rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
+    }
+
+    @media (max-width: 850px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .links.open { display: flex; }
-      .grid { grid-template-columns: 1fr; }
-      section { padding: 52px 0; }
-      .preview { padding: 22px; }
+
+      .about-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        min-height: 230px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
     }
-    @media(prefers-reduced-motion:reduce) {
-      html { scroll-behavior: auto; }
+
+    @media (max-width: 650px) {
+      nav {
+        min-height: 68px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 18px 5%;
+        background: #111127;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+      }
+
+      .hero {
+        min-height: 75vh;
+        padding: 65px 0;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      .portfolio-card {
+        padding: 0;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+
+      .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Aman Web Studio",
-    "url": "https://amandhakads119-boop.github.io/Aman-web-studio/",
-    "telephone": "+91-96696-37311",
-    "areaServed": "India",
-    "description": "Responsive website design and development services."
-  }
-  </script>
 </head>
+
 <body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="#home" class="logo">Aman <span>Web Studio</span></a>
 
-<header>
-  <nav class="container">
-    <a class="logo" href="#home">Aman <span>Web Studio</span></a>
-    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
-    <div class="links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="#contact">Start a Project ↗</a>
-    </div>
-  </nav>
-</header>
+      <button class="menu-btn" id="menuBtn"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">☰</button>
 
-<main>
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">✦ CREATIVE DIGITAL SOLUTIONS</span>
-        <h1>Your Ideas.<br><span class="gradient">Our Digital Experience.</span></h1>
-        <p>We create modern, attractive and mobile-friendly websites that help businesses build their online presence and connect with customers.</p>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <span class="eyebrow">✨ Creative Digital Solutions</span>
+
+        <h1>
+          Your Ideas.<br>
+          Our <span class="gradient-text">Digital Experience.</span>
+        </h1>
+
+        <p>
+          Welcome to Aman Web Studio. We create modern, attractive and
+          mobile-friendly websites that help businesses build their online
+          presence and showcase their work.
+        </p>
+
         <div class="actions">
-          <a class="btn" href="#contact">🚀 Start Your Project</a>
-          <a class="btn btn-outline" href="https://wa.me/919669637311" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+          <a class="btn btn-primary"
+             href="#contact">🚀 Start Your Project</a>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/919669637311?text=Hello%20Aman%20Web%20Studio%2C%20I%20want%20to%20discuss%20a%20website%20project."
+             target="_blank" rel="noopener noreferrer">
+            WhatsApp Us
+          </a>
         </div>
-        <p>✓ Responsive design &nbsp; ✓ Clear communication &nbsp; ✓ SEO basics</p>
       </div>
-      <div class="preview">
-        <span class="eyebrow">YOUR BRAND, ONLINE</span>
-        <h2>Make a great first impression.</h2>
-        <p>A clean, confident website built around your goals.</p>
-        <a class="btn" href="#services">Explore Services →</a>
-        <div class="preview-boxes"><div></div><div></div><div></div></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our <span class="gradient-text">Services</span></h2>
+          <p>
+            Digital services designed to give your business a professional
+            and memorable online presence.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Website Design</h3>
+            <p>
+              Modern and attractive website layouts tailored to your
+              brand, business and goals.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Web Development</h3>
+            <p>
+              Functional websites with clean code, useful sections
+              and a smooth browsing experience.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📱</div>
+            <h3>Mobile-Friendly Design</h3>
+            <p>
+              Responsive pages designed to work across mobile phones,
+              tablets and desktop screens.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Creative Design</h3>
+            <p>
+              Eye-catching colours, typography and visual elements
+              that help your brand stand out.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛍️</div>
+            <h3>Business Websites</h3>
+            <p>
+              Present your services, business details and contact
+              information in one convenient place.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔎</div>
+            <h3>SEO Basics</h3>
+            <p>
+              Search-friendly page titles, descriptions and content
+              structure to help search engines understand your website.
+            </p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="services">
-    <div class="container">
-      <div class="section-heading"><span class="eyebrow">WHAT WE DO</span><h2>Our <span class="gradient">Services</span></h2><p>Practical digital services for businesses, creators and new ideas.</p></div>
-      <div class="grid">
-        <article class="card"><div class="icon">💻</div><h3>Website Design</h3><p>Modern layouts, readable typography and attractive visual design.</p></article>
-        <article class="card"><div class="icon">⚙️</div><h3>Web Development</h3><p>Clean front-end code and useful website sections.</p></article>
-        <article class="card"><div class="icon">📱</div><h3>Mobile-Friendly Design</h3><p>Layouts that adapt to mobile phones, tablets and computers.</p></article>
-        <article class="card"><div class="icon">🚀</div><h3>Landing Pages</h3><p>Focused pages for products, campaigns and services.</p></article>
-        <article class="card"><div class="icon">🛍️</div><h3>Business Websites</h3><p>Present your business, services and contact details professionally.</p></article>
-        <article class="card"><div class="icon">🔎</div><h3>SEO Basics</h3><p>Search-friendly titles, descriptions and page structure.</p></article>
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our <span class="gradient-text">Portfolio</span></h2>
+          <p>
+            Explore the kinds of digital projects Aman Web Studio can
+            help create for you.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card portfolio-card">
+            <div class="portfolio-art" aria-hidden="true">🌐</div>
+            <div class="portfolio-info">
+              <h3>Business Website</h3>
+              <p>
+                A professional online home for a local business,
+                including services and contact details.
+              </p>
+            </div>
+          </article>
+
+          <article class="card portfolio-card">
+            <div class="portfolio-art" aria-hidden="true">🚀</div>
+            <div class="portfolio-info">
+              <h3>Landing Page</h3>
+              <p>
+                A focused page to introduce an offer, product,
+                service or new project.
+              </p>
+            </div>
+          </article>
+
+          <article class="card portfolio-card">
+            <div class="portfolio-art" aria-hidden="true">✨</div>
+            <div class="portfolio-info">
+              <h3>Creative Design</h3>
+              <p>
+                Modern visual concepts with bold colours and a
+                consistent digital style.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="form-note" style="text-align:center; margin-top:20px;">
+          These are project categories, not claims of completed client work.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="portfolio">
-    <div class="container">
-      <div class="section-heading"><span class="eyebrow">PROJECT IDEAS</span><h2>Our <span class="gradient">Portfolio</span></h2><p>Examples of the types of websites we can help create.</p></div>
-      <div class="grid">
-        <article class="card"><div class="icon">🌐</div><h3>Business Website</h3><p>A professional online home for a local business.</p></article>
-        <article class="card"><div class="icon">⚡</div><h3>Landing Page</h3><p>A focused page for an offer, product or service.</p></article>
-        <article class="card"><div class="icon">🎨</div><h3>Personal Portfolio</h3><p>A polished place to present skills and creative work.</p></article>
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Simple <span class="gradient-text">Pricing</span></h2>
+          <p>
+            Choose a starting package for your next website.
+            Final pricing depends on the features and project requirements.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card price-card">
+            <h3>Basic</h3>
+            <div class="price">₹999 <small>/ starting price</small></div>
+            <p>A simple starting point for a small website.</p>
+            <ul>
+              <li>Basic page layout</li>
+              <li>Mobile-friendly structure</li>
+              <li>Contact information</li>
+              <li>Basic styling</li>
+            </ul>
+            <a class="btn btn-outline"
+               href="https://wa.me/919669637311?text=Hello%2C%20I%20am%20interested%20in%20the%20Basic%20website%20package."
+               target="_blank" rel="noopener noreferrer">Choose Basic</a>
+          </article>
+
+          <article class="card price-card featured">
+            <span class="eyebrow">Popular Choice</span>
+            <h3>Standard</h3>
+            <div class="price">₹2,999 <small>/ starting price</small></div>
+            <p>For businesses that need more sections and detail.</p>
+            <ul>
+              <li>Multiple website sections</li>
+              <li>Responsive design</li>
+              <li>WhatsApp contact button</li>
+              <li>Basic on-page SEO setup</li>
+            </ul>
+            <a class="btn btn-primary"
+               href="https://wa.me/919669637311?text=Hello%2C%20I%20am%20interested%20in%20the%20Standard%20website%20package."
+               target="_blank" rel="noopener noreferrer">Choose Standard</a>
+          </article>
+
+          <article class="card price-card">
+            <h3>Premium</h3>
+            <div class="price">₹4,999 <small>/ starting price</small></div>
+            <p>For a more customised website experience.</p>
+            <ul>
+              <li>Customised page design</li>
+              <li>Additional content sections</li>
+              <li>Contact and enquiry layout</li>
+              <li>SEO-friendly page structure</li>
+            </ul>
+            <a class="btn btn-outline"
+               href="https://wa.me/919669637311?text=Hello%2C%20I%20am%20interested%20in%20the%20Premium%20website%20package."
+               target="_blank" rel="noopener noreferrer">Choose Premium</a>
+          </article>
+        </div>
+
+        <p class="form-note" style="text-align:center; margin-top:20px;">
+          Packages are starting prices, not a final quote. Confirm scope,
+          delivery time, hosting and any extra costs before ordering.
+        </p>
       </div>
-      <p style="text-align:center;font-size:13px">These are example project categories, not claims of completed client projects.</p>
-    </div>
-  </section>
+    </section>
 
-  <section id="pricing">
-    <div class="container">
-      <div class="section-heading"><span class="eyebrow">SIMPLE PRICING</span><h2>Choose Your <span class="gradient">Package</span></h2><p>Starting prices. Final pricing depends on the scope and features.</p></div>
-      <div class="grid">
-        <article class="card"><h3>Basic</h3><div class="price">₹999</div><p>Starting price</p><ul><li>Basic page layout</li><li>Mobile-friendly structure</li><li>Contact information</li><li>Basic styling</li></ul><a class="btn btn-outline" href="https://wa.me/919669637311?text=I%20am%20interested%20in%20the%20Basic%20package" target="_blank" rel="noopener noreferrer">Choose Basic</a></article>
-        <article class="card featured"><h3>Standard ⭐</h3><div class="price">₹2,999</div><p>Starting price</p><ul><li>Multiple website sections</li><li>Responsive design</li><li>WhatsApp contact button</li><li>Basic on-page SEO</li></ul><a class="btn" href="https://wa.me/919669637311?text=I%20am%20interested%20in%20the%20Standard%20package" target="_blank" rel="noopener noreferrer">Choose Standard</a></article>
-        <article class="card"><h3>Premium</h3><div class="price">₹4,999</div><p>Starting price</p><ul><li>Customised page design</li><li>Extra content sections</li><li>Contact and enquiry layout</li><li>SEO-friendly structure</li></ul><a class="btn btn-outline" href="https://wa.me/919669637311?text=I%20am%20interested%20in%20the%20Premium%20package" target="_blank" rel="noopener noreferrer">Choose Premium</a></article>
-      </div>
-      <p style="text-align:center;font-size:13px">Confirm project scope, delivery time, domain, hosting and extra costs before ordering.</p>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container about-wrap">
+        <div class="about-visual">
+          <strong>
+            Turning Ideas Into<br>
+            <span class="gradient-text">Digital Experiences.</span>
+          </strong>
+        </div>
 
-  <section id="about">
-    <div class="container about">
-      <div class="about-art">A</div>
-      <div><span class="eyebrow">ABOUT US</span><h2>Meet <span class="gradient">Aman Web Studio</span></h2><p>We help businesses and creators build a professional online presence with attractive design, mobile usability and practical website features.</p><p>Have an idea or need to improve an existing website? Tell us what you need and let's discuss a suitable solution.</p><a class="btn" href="#contact">Let's Talk →</a></div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-heading"><span class="eyebrow">GET IN TOUCH</span><h2>Let's Build Something <span class="gradient">Great.</span></h2><p>Fill in the details below to prepare your enquiry in WhatsApp.</p></div>
-      <div class="contact-grid">
-        <div class="card"><h3>Contact Details</h3><p>💬 WhatsApp: +91 96696 37311</p><p>Tell us about your website, your goals and your preferred budget.</p><a class="btn" href="https://wa.me/919669637311" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></div>
-        <form id="contactForm">
-          <label for="name">Your name</label><input id="name" required maxlength="80" placeholder="Enter your name">
-          <label for="service">Service needed</label>
-          <select id="service" required><option value="">Choose a service</option><option>Business website</option><option>Landing page</option><option>Portfolio website</option><option>Website redesign</option><option>SEO basics</option><option>Other</option></select>
-          <label for="budget">Budget</label>
-          <select id="budget"><option>Not decided</option><option>₹999–₹2,999</option><option>₹3,000–₹4,999</option><option>₹5,000+</option></select>
-          <label for="message">Project details</label><textarea id="message" maxlength="1000" placeholder="Tell us about your idea"></textarea>
-          <button class="btn" type="submit">Send Enquiry on WhatsApp ↗</button>
-          <p style="font-size:12px">Your message is not stored by this page. WhatsApp opens so you can review and send it.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container cta"><h2>Ready to take your idea online?</h2><p>Let's discuss a website that suits your business and goals.</p><a class="btn" href="https://wa.me/919669637311?text=Hello%20Aman%20Web%20Studio%2C%20I%20want%20to%20discuss%20a%20website." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></div>
-  </section>
-</main>
-
-<footer><div class="container footer-row"><strong>Aman Web Studio</strong><span>© <span id="year"></span> Aman Web Studio. All rights reserved.</span><a href="#home">Back to top ↑</a></div></footer>
-<a class="whatsapp" href="https://wa.me/919669637311" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a>
-
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-
-  menuBtn.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.textContent = open ? '✕ Close' : '☰ Menu';
-  });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.textContent = '☰ Menu';
-    });
-  });
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  document.getElementById('contactForm').addEventListener('submit', event => {
-    event.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const service = document.getElementById('service').value;
-    const budget = document.getElementById('budget').value;
-    const message = document.getElementById('message').value.trim();
-    const text = `Hello Aman Web Studio!\nName: ${name}\nService: ${service}\nBudget: ${budget}\nProject details: ${message || 'Not provided'}`;
-    window.open('https://wa.me/919669637311?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
-  });
-</script>
-</body>
-</html>
+        <div class="about-copy">
+          <span class="eyebrow">About Us</span>
+          <h2>Meet <span class="gra
