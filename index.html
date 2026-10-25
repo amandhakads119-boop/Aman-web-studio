@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Aman Web Studio creates modern websites, logos, graphics, and YouTube thumbnails.">
   <title>Aman Web Studio | Creative Digital Solutions</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -16,22 +18,23 @@
     }
     a { text-decoration: none; color: inherit; }
     header {
-      padding: 18px 7%;
+      padding: 18px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 15px;
       flex-wrap: wrap;
-      border-bottom: 1px solid #202942;
       background: #0b1122;
+      border-bottom: 1px solid #24334f;
     }
     .logo { font-size: 22px; font-weight: 800; color: #67e8f9; }
-    nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
     nav a:hover { color: #67e8f9; }
+
     .hero {
-      padding: 90px 7% 80px;
+      padding: 90px 7%;
       text-align: center;
-      background: radial-gradient(ellipse at top, #18345d, #080d1b 70%);
+      background: radial-gradient(ellipse at top, #18345d, #080d1b 72%);
     }
     .tag {
       display: inline-block;
@@ -52,12 +55,15 @@
     }
     .btn {
       display: inline-block;
-      padding: 13px 22px;
-      margin: 8px 5px;
+      padding: 12px 20px;
+      margin: 7px 4px;
       border-radius: 9px;
       font-weight: bold;
       background: #67e8f9;
       color: #07111e;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
     }
     .btn-outline {
       background: transparent;
@@ -65,7 +71,7 @@
       color: #fff;
     }
     section { padding: 65px 7%; }
-    .section-title { text-align: center; margin-bottom: 35px; }
+    .section-title { text-align: center; margin-bottom: 32px; }
     .section-title h2 { font-size: 32px; }
     .section-title p { color: #aab6ce; margin-top: 8px; }
     .cards {
@@ -80,10 +86,14 @@
       padding: 25px;
       transition: transform .2s, border-color .2s;
     }
-    .card:hover { transform: translateY(-5px); border-color: #67e8f9; }
-    .card .icon { font-size: 34px; }
+    .card:hover { transform: translateY(-4px); border-color: #67e8f9; }
+    .icon { font-size: 34px; }
     .card h3 { margin: 12px 0 8px; }
     .card p { color: #b3bfd4; font-size: 15px; }
+    .project-label { color: #67e8f9; font-size: 12px; font-weight: bold; }
+    .price { font-size: 30px; font-weight: bold; margin: 14px 0; }
+    .price small { font-size: 13px; color: #aab6ce; font-weight: normal; }
+    .card ul { padding-left: 20px; margin: 15px 0; color: #c4cfe0; font-size: 14px; }
     .about {
       max-width: 800px;
       margin: auto;
@@ -91,14 +101,26 @@
       color: #c2cce0;
     }
     .contact-box {
-      max-width: 700px;
+      max-width: 650px;
       margin: auto;
-      padding: 30px;
-      text-align: center;
+      padding: 28px;
       border: 1px solid #2b4261;
       background: #101a30;
       border-radius: 18px;
     }
+    label { display: block; margin-top: 12px; font-size: 14px; }
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      margin-top: 6px;
+      border: 1px solid #344861;
+      border-radius: 8px;
+      background: #080d1b;
+      color: #fff;
+      font: inherit;
+    }
+    textarea { resize: vertical; }
     footer {
       text-align: center;
       padding: 25px 15px;
@@ -108,95 +130,213 @@
     }
     .whatsapp {
       position: fixed;
-      bottom: 20px;
-      right: 18px;
+      bottom: 18px;
+      right: 15px;
       background: #25d366;
       color: #06150b;
       font-weight: bold;
-      padding: 13px 17px;
+      padding: 12px 16px;
       border-radius: 40px;
       box-shadow: 0 5px 20px #0006;
       z-index: 10;
     }
     @media (max-width: 600px) {
       header { justify-content: center; }
-      nav { justify-content: center; }
+      nav { justify-content: center; gap: 12px; }
       .hero { padding: 65px 6%; }
       section { padding: 48px 6%; }
-      .contact-box { padding: 22px 15px; }
+      .contact-box { padding: 20px 15px; }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <a class="logo" href="#home">Aman Web Studio</a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <a class="logo" href="#home">AMAN WEB STUDIO</a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <span class="tag">CREATIVE DIGITAL STUDIO</span>
-      <h1>We Build <span class="accent">Beautiful</span><br>Digital Experiences</h1>
-      <p>Modern websites, creative graphic designs, and eye-catching YouTube thumbnails to help your brand stand out online.</p>
-      <a class="btn" href="#services">Explore Services</a>
-      <a class="btn btn-outline" href="#contact">Let's Talk</a>
-    </section>
+<main>
+  <section class="hero" id="home">
+    <span class="tag">CREATIVE DIGITAL STUDIO</span>
+    <h1>We Build <span class="accent">Beautiful</span><br>Digital Experiences</h1>
+    <p>Modern websites, creative graphics, and eye-catching YouTube thumbnails to help your brand stand out online.</p>
+    <a class="btn" href="#services">Explore Services</a>
+    <a class="btn btn-outline" href="#contact">Let's Talk</a>
+  </section>
 
-    <section id="services">
-      <div class="section-title">
-        <h2>Our <span class="accent">Services</span></h2>
-        <p>Creative solutions for your digital growth.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="icon">🌐</div>
-          <h3>Website Building</h3>
-          <p>Responsive and modern websites for businesses, portfolios, and personal brands.</p>
-        </article>
-        <article class="card">
-          <div class="icon">🎨</div>
-          <h3>Logo & Graphic Design</h3>
-          <p>Unique logos, social media graphics, and attractive designs for your brand.</p>
-        </article>
-        <article class="card">
-          <div class="icon">▶️</div>
-          <h3>YouTube Thumbnails</h3>
-          <p>Eye-catching thumbnails and channel banners designed to match your content.</p>
-        </article>
-        <article class="card">
-          <div class="icon">📱</div>
-          <h3>Mobile-Friendly Design</h3>
-          <p>Clean layouts that look great on mobile phones, tablets, and computers.</p>
-        </article>
-      </div>
-    </section>
+  <section id="services">
+    <div class="section-title">
+      <h2>Our <span class="accent">Services</span></h2>
+      <p>Creative solutions for your digital growth.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="icon">🌐</div>
+        <h3>Website Building</h3>
+        <p>Modern, responsive websites for businesses, portfolios, and personal brands.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🎨</div>
+        <h3>Logo & Graphic Design</h3>
+        <p>Creative logo concepts, social media graphics, and brand designs.</p>
+      </article>
+      <article class="card">
+        <div class="icon">▶️</div>
+        <h3>YouTube Thumbnails</h3>
+        <p>Eye-catching thumbnails and channel banners for your content.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📱</div>
+        <h3>Mobile-Friendly Design</h3>
+        <p>Layouts that look good on phones, tablets, and computers.</p>
+      </article>
+    </div>
+  </section>
 
-    <section id="about">
-      <div class="section-title">
-        <h2>About <span class="accent">Us</span></h2>
-      </div>
-      <div class="about">
-        <p>Welcome to Aman Web Studio! We focus on modern design, creative ideas, and simple digital experiences. Our goal is to help individuals, creators, and businesses build a stronger online presence.</p>
-      </div>
-    </section>
+  <section id="portfolio">
+    <div class="section-title">
+      <h2>Our <span class="accent">Portfolio</span></h2>
+      <p>Example project concepts. Replace these with your completed work.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="icon">💻</div>
+        <span class="project-label">CONCEPT 01</span>
+        <h3>Business Website</h3>
+        <p>A clean landing-page concept for a modern business.</p>
+      </article>
+      <article class="card">
+        <div class="icon">✨</div>
+        <span class="project-label">CONCEPT 02</span>
+        <h3>Brand Identity</h3>
+        <p>A visual branding concept with a modern, memorable style.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🎬</div>
+        <span class="project-label">CONCEPT 03</span>
+        <h3>Creator Graphics</h3>
+        <p>Sample ideas for YouTube thumbnails and social media posts.</p>
+      </article>
+    </div>
+  </section>
 
-    <section id="contact">
-      <div class="section-title">
-        <h2>Let's Work <span class="accent">Together</span></h2>
-        <p>Have a project in mind? Get in touch with us.</p>
-      </div>
-      <div class="contact-box">
-        <h3>Ready to start your project?</h3>
-        <p style="color:#b3bfd4; margin:12px 0 18px;">Message us on WhatsApp to discuss your requirements.</p>
-        <a class="btn" href="https://wa.me/919669637311?text=Hello%20Aman%20Web%20Studio%2C%20I%20want%20to%20discuss%20a%20project.">Contact on WhatsApp</a>
-      </div>
-    </section>
-  </main>
+  <section id="pricing">
+    <div class="section-title">
+      <h2>Simple <span class="accent">Pricing</span></h2>
+      <p>Starting prices for common design services.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3>Logo Design</h3>
+        <div class="price">₹499 <small>/ starting</small></div>
+        <ul>
+          <li>Basic logo concept</li>
+          <li>One revision</li>
+          <li>Digital delivery</li>
+        </ul>
+        <a class="btn" href="#contact">Choose Plan</a>
+      </article>
+      <article class="card">
+        <h3>Basic Website</h3>
+        <div class="price">₹2,999 <small>/ starting</small></div>
+        <ul>
+          <li>One-page website</li>
+          <li>Mobile-friendly layout</li>
+          <li>Contact section</li>
+        </ul>
+        <a class="btn" href="#contact">Choose Plan</a>
+      </article>
+      <article class="card">
+        <h3>YouTube Thumbnail</h3>
+        <div class="price">₹199 <small>/ starting</small></div>
+        <ul>
+          <li>One thumbnail design</li>
+          <li>Custom text and layout</li>
+          <li>Digital delivery</li>
+        </ul>
+        <a class="btn" href="#contact">Choose Plan</a>
+      </article>
+    </div>
+    <p style="text-align:center;color:#aab6ce;margin-top:20px;font-size:13px;">
+      Prices are examples. Update them to match your actual rates and services.
+    </p>
+  </section>
 
-  <footer
-    
+  <section id="about">
+    <div class="section-title">
+      <h2>About <span class="accent">Us</span></h2>
+    </div>
+    <div class="about">
+      <p>Welcome to Aman Web Studio! We focus on modern design, creative ideas, and simple digital experiences. Our goal is to help individuals, creators, and businesses build a stronger online presence.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Let's Work <span class="accent">Together</span></h2>
+      <p>Tell us about your project and contact us on WhatsApp.</p>
+    </div>
+    <div class="contact-box">
+      <form id="contactForm">
+        <label for="name">Your Name</label>
+        <input id="name" type="text" placeholder="Enter your name" required>
+
+        <label for="service">Choose a Service</label>
+        <select id="service" required>
+          <option value="">Select a service</option>
+          <option>Website Building</option>
+          <option>Logo & Graphic Design</option>
+          <option>YouTube Thumbnail</option>
+          <option>Social Media Design</option>
+          <option>Other</option>
+        </select>
+
+        <label for="message">Project Details</label>
+        <textarea id="message" rows="4" placeholder="Describe your project..." required></textarea>
+
+        <button class="btn" type="submit">Send Enquiry on WhatsApp</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Aman Web Studio. All rights reserved.</p>
+  <p>Designed with creativity ✨</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919669637311" target="_blank" rel="noopener">WhatsApp ↗</a>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    // Replace this with your WhatsApp number including country code, without + or spaces.
+    const phone = "919669637311";
+
+    const whatsappMessage =
+      "Hello Aman Web Studio!\n" +
+      "My name: " + name + "\n" +
+      "Service: " + service + "\n" +
+      "Project details: " + message;
+
+    const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(whatsappMessage);
+    window.location.href = url;
+  });
+</script>
+</body>
+</html>
