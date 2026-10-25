@@ -935,3 +935,150 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Start Your Project ↗</a>
             <a class="btn btn-outline" 
+  href="#contact">Contact Me</a>
+</div>
+</div>
+</div>
+
+  </section>  <!-- Services Section -->  <section id="services" class="section">
+    <div class="container">
+      <h2>My Services</h2>
+      <p>Creative digital solutions for your business.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Web Design</h3>
+          <p>Modern, responsive and attractive website designs.</p>
+        </div>
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Fast and mobile-friendly websites for your business.</p>
+        </div>
+        <div class="card">
+          <h3>Graphic Design</h3>
+          <p>Creative banners, posters and social media designs.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Portfolio Section -->  <section id="portfolio" class="section">
+    <div class="container">
+      <h2>My Portfolio</h2>
+      <p>Some examples of my creative work.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Business Website</h3>
+          <p>A clean and professional website for a business.</p>
+        </div>
+        <div class="card">
+          <h3>Landing Page</h3>
+          <p>A modern landing page designed to attract customers.</p>
+        </div>
+        <div class="card">
+          <h3>Creative Design</h3>
+          <p>Beautiful visual designs for online promotion.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Pricing Section -->  <section id="pricing" class="section">
+    <div class="container">
+      <h2>Website Pricing</h2>
+      <p>Contact me to discuss a package that suits your needs.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Basic</h3>
+          <p>Simple personal or portfolio website.</p>
+          <h2>Starting ₹999</h2>
+          <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Basic%20website%20package.">Enquire Now</a>
+        </div>
+        <div class="card">
+          <h3>Standard</h3>
+          <p>Professional multi-section business website.</p>
+          <h2>Starting ₹2,999</h2>
+          <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Standard%20website%20package.">Enquire Now</a>
+        </div>
+        <div class="card">
+          <h3>Premium</h3>
+          <p>Advanced website with additional features.</p>
+          <h2>Starting ₹4,999</h2>
+          <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20the%20Premium%20website%20package.">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- About Section -->  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Welcome to Aman Web Studio. I create modern, attractive and
+        responsive websites to help businesses build their online presence.
+      </p>
+    </div>
+  </section>  <!-- Contact Section -->  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Fill in your details and send your enquiry directly through WhatsApp.</p>  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+    <input type="text" id="service" placeholder="Service You Need" required>
+    <textarea id="message" placeholder="Tell me about your project" rows="5" required></textarea>
+    <button class="btn" type="submit">Send Enquiry on WhatsApp</button>
+  </form>
+</div>
+
+  </section>  <!-- Call to Action -->  <section class="section">
+    <div class="container">
+      <h2>Let's Build Something Great!</h2>
+      <p>Have a project in mind? Let's discuss it today.</p>
+      <a class="btn" href="https://wa.me/919669637311?text=Hi%20Aman%2C%20I%20want%20to%20discuss%20a%20website%20project.">Chat on WhatsApp</a>
+    </div>
+  </section>  <!-- Footer -->  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Aman Web Studio. All rights reserved.</p>
+    </div>
+  </footer>  <!-- Floating WhatsApp Button --><a class="whatsapp-float"
+href="https://wa.me/919669637311"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Chat with Aman on WhatsApp">
+WhatsApp
+</a>
+
+  <!-- JavaScript -->  <script>
+    // Automatically update the footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Contact form sends the details to WhatsApp
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappMessage =
+        "Hello Aman Web Studio!%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Service: " + encodeURIComponent(service) + "%0A" +
+        "Project Details: " + encodeURIComponent(message);
+
+      const whatsappURL = "https://wa.me/919669637311?text=" + whatsappMessage;
+      window.open(whatsappURL, "_blank");
+    });
+
+    // Mobile navigation menu, if the menu button exists
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector("nav");
+
+    if (menuButton && navigation) {
+      menuButton.addEventListener("click", function() {
+        navigation.classList.toggle("active");
+      });
+
+      navigation.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+          navigation.classList.remove("active");
+        });
+      });
+    }
+  </script></body>
+</html>
