@@ -1,801 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="oRcGKEJmW3h8Ul5tYeK4qqT45sJvpEhpA-eoQPygzSc">
-<meta name="description" content="Aman Web Studio creates modern websites, creative branding and digital experiences for growing businesses.">
-<meta name="theme-color" content="#0b0b12">
-<title>Aman Web Studio — Digital Design Agency</title>
+  <meta name="google-site-verification" content="oRcGKEJmW3h8Ul5tYeK4qqT45sJvpEhpA-eoQPygzSc" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aman Web Studio creates beautiful websites, logos and social media designs.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Aman Web Studio | Creative Digital Agency</title>
 
-<style>
-:root {
-  --bg: #0b0b12;
-  --panel: #13131e;
-  --panel2: #191927;
-  --text: #f7f7ff;
-  --muted: #a4a4bc;
-  --purple: #a78bfa;
-  --pink: #f0abfc;
-  --line: rgba(255,255,255,.10);
-}
+  <style>
+    :root {
+      --purple: #7928ca;
+      --pink: #f43f9b;
+      --ink: #211632;
+      --muted: #6f687c;
+      --light: #faf7ff;
+      --border: #eee5f8;
+      --gradient: linear-gradient(120deg, #7928ca, #f43f9b);
+    }
 
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  font-family: Inter, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
-}
-a { text-decoration:none; color:inherit; }
-button, input, textarea, select { font:inherit; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-.wrap { width:min(1120px, 90%); margin:auto; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
 
-header {
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(11,11,18,.88);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
-}
-.navbar {
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-.brand {
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:-.7px;
-}
-.brand span { color:var(--purple); }
-nav { display:flex; gap:24px; align-items:center; }
-nav a { color:#c8c8d8; font-size:14px; }
-nav a:hover { color:var(--pink); }
+    body {
+      background: #ffffff;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-.nav-cta, .button {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  border-radius:12px;
-  padding:12px 19px;
-  font-weight:750;
-  font-size:14px;
-  transition:.2s ease;
-}
-.nav-cta, .button-primary {
-  color:#130d20;
-  background:linear-gradient(120deg,var(--purple),var(--pink));
-}
-.nav-cta:hover, .button:hover { transform:translateY(-3px); }
-.button-secondary {
-  border:1px solid #454055;
-  background:#171522;
-  color:white;
-}
-.button-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1120px, 90%); margin: auto; }
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-.hero {
-  position:relative;
-  overflow:hidden;
-  padding:105px 0 90px;
-  background:
-    radial-gradient(ellipse at 15% 10%,rgba(124,58,237,.20),transparent 40%),
-    radial-gradient(ellipse at 90% 50%,rgba(217,70,239,.12),transparent 35%);
-}
-.hero-grid {
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  align-items:center;
-  gap:60px;
-}
-.eyebrow {
-  display:inline-flex;
-  gap:9px;
-  align-items:center;
-  color:var(--pink);
-  background:#20152d;
-  border:1px solid #443052;
-  border-radius:100px;
-  padding:7px 13px;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.2px;
-}
-.dot {
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#c4b5fd;
-  box-shadow:0 0 12px #c4b5fd;
-}
-h1 {
-  margin-top:24px;
-  font-size:clamp(43px,6.5vw,76px);
-  letter-spacing:-3.5px;
-  line-height:1.04;
-}
-.gradient-text {
-  background:linear-gradient(100deg,#c4b5fd,#f0abfc,#f9a8d4);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.hero-copy {
-  color:var(--muted);
-  max-width:540px;
-  font-size:17px;
-  margin-top:22px;
-}
-.trust-row {
-  display:flex;
-  gap:24px;
-  flex-wrap:wrap;
-  margin-top:35px;
-  color:#c9c8d9;
-  font-size:13px;
-}
-.trust-row span::before { content:"✓ "; color:var(--pink); font-weight:bold; }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
 
-.showcase {
-  position:relative;
-  padding:14px;
-  border:1px solid #393047;
-  border-radius:24px;
-  background:linear-gradient(145deg,#20182d,#11111b 65%);
-  box-shadow:0 30px 100px #0007;
-  transform:rotate(1deg);
-}
-.browser-bar {
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:8px 8px 15px;
-}
-.browser-bar i {
-  width:8px; height:8px; border-radius:50%;
-  background:#70667e;
-}
-.browser-label {
-  margin-left:auto;
-  color:#9d91ad;
-  font-size:10px;
-}
-.mock-site {
-  min-height:310px;
-  overflow:hidden;
-  border-radius:14px;
-  padding:24px;
-  background:linear-gradient(145deg,#252048,#171526 55%,#38214c);
-}
-.mock-logo { font-size:12px; font-weight:900; letter-spacing:1px; }
-.mock-pill {
-  display:inline-block;
-  margin-top:38px;
-  padding:5px 9px;
-  border:1px solid #8173b8;
-  border-radius:30px;
-  color:#e0d7ff;
-  font-size:10px;
-}
-.mock-site h3 {
-  margin-top:14px;
-  max-width:260px;
-  font-size:35px;
-  line-height:1.08;
-  letter-spacing:-1px;
-}
-.mock-site p {
-  color:#c0b9d6;
-  margin-top:12px;
-  font-size:11px;
-  max-width:230px;
-}
-.mock-button {
-  display:inline-block;
-  margin-top:18px;
-  padding:9px 13px;
-  border-radius:7px;
-  color:#21122e;
-  background:#e9d5ff;
-  font-size:10px;
-  font-weight:bold;
-}
-.float-tag {
-  position:absolute;
-  right:-17px;
-  bottom:32px;
-  background:#faf5ff;
-  color:#21122e;
-  padding:12px 16px;
-  border-radius:12px;
-  font-size:12px;
-  font-weight:800;
-  box-shadow:0 12px 30px #0006;
-}
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-.section { padding:85px 0; }
-.section-soft {
-  background:linear-gradient(180deg,#0e0e17,#10101a,#0b0b12);
-  border-top:1px solid #ffffff08;
-  border-bottom:1px solid #ffffff08;
-}
-.section-head {
-  max-width:650px;
-  margin:0 auto 42px;
-  text-align:center;
-}
-.kicker {
-  color:var(--pink);
-  font-size:12px;
-  font-weight:850;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.section-head h2 {
-  margin-top:10px;
-  font-size:clamp(32px,4vw,48px);
-  line-height:1.15;
-  letter-spacing:-1.7px;
-}
-.section-head p { margin-top:13px; color:var(--muted); }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
 
-.services-grid {
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:16px;
-}
-.service-card {
-  padding:25px 21px;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:18px;
-  transition:.25s;
-}
-.service-card:hover {
-  transform:translateY(-5px);
-  border-color:#7962a7;
-  background:#181522;
-}
-.service-icon {
-  width:49px;
-  height:49px;
-  display:grid;
-  place-items:center;
-  font-size:23px;
-  border-radius:14px;
-  background:#272039;
-  margin-bottom:20px;
-}
-.service-card h3 { font-size:17px; margin-bottom:9px; }
-.service-card p { color:var(--muted); font-size:13px; }
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 7px 20px #a855f744;
+    }
 
-.portfolio-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:25px;
-}
-.project {
-  overflow:hidden;
-  border:1px solid var(--line);
-  background:#12121c;
-  border-radius:20px;
-  transition:.25s;
-}
-.project:hover {
-  transform:translateY(-5px);
-  border-color:#7d65aa;
-}
-.project-preview {
-  min-height:240px;
-  padding:20px;
-  position:relative;
-  overflow:hidden;
-}
-.preview-business { background:linear-gradient(135deg,#dbeafe,#a5b4fc); color:#18213e; }
-.preview-shop { background:linear-gradient(135deg,#fef3c7,#fda4af); color:#492525; }
-.preview-creator { background:linear-gradient(135deg,#1b163b,#6d28d9); color:white; }
-.preview-portfolio { background:linear-gradient(135deg,#d1fae5,#6ee7b7); color:#12372d; }
-.preview-agency { background:linear-gradient(135deg,#111827,#334155); color:#f8fafc; }
-.preview-mobile { background:linear-gradient(135deg,#f5d0fe,#c4b5fd); color:#39164d; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+      font-size: .9rem;
+      font-weight: 600;
+    }
 
-.preview-window {
-  max-width:390px;
-  min-height:195px;
-  margin:auto;
-  background:#ffffffd9;
-  border:1px solid #ffffffb5;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 14px 35px #0002;
-  color:#202036;
-}
-.window-top {
-  display:flex;
-  gap:4px;
-  padding:9px;
-  background:#ffffffa8;
-}
-.window-top span {
-  width:6px;height:6px;border-radius:50%;background:#a4a4b5;
-}
-.window-content { padding:17px; }
-.window-nav {
-  display:flex;
-  justify-content:space-between;
-  font-size:9px;
-  font-weight:800;
-}
-.window-content h4 {
-  margin-top:22px;
-  max-width:220px;
-  font-size:25px;
-  line-height:1.05;
-  letter-spacing:-.8px;
-}
-.window-content p { font-size:9px; margin-top:9px; opacity:.7; }
-.window-cta {
-  display:inline-block;
-  background:#6954c8;
-  color:white;
-  border-radius:5px;
-  padding:6px 9px;
-  font-size:8px;
-  margin-top:12px;
-}
-.shop-window {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-top:14px;
-}
-.product-tile {
-  height:75px;
-  border-radius:8px;
-  display:grid;
-  place-items:center;
-  font-size:30px;
-  background:#f7d4c9;
-}
-.product-tile + .product-tile { background:#d7d9fa; }
-.creator-window {
-  min-height:195px;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  background:linear-gradient(135deg,#241044,#6d28d9);
-  color:white;
-}
-.creator-window h4 {
-  font-size:30px;
-  line-height:1;
-  transform:rotate(-3deg);
-  text-shadow:3px 3px #f97316;
-}
-.creator-window p { font-size:10px; margin-top:12px; }
-.preview-bottom {
-  position:absolute;
-  bottom:15px;
-  right:17px;
-  font-size:10px;
-  font-weight:800;
-  opacity:.75;
-}
-.project-info { padding:22px; }
-.project-meta {
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  color:var(--pink);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.8px;
-}
-.project-info h3 { margin-top:10px; font-size:21px; }
-.project-info p { color:var(--muted); font-size:14px; margin-top:6px; }
-.project-info a {
-  display:inline-block;
-  margin-top:15px;
-  font-size:13px;
-  font-weight:bold;
-  color:#d8b4fe;
-}
+    .nav-links a:hover { color: var(--pink); }
+    .menu-button {
+      display: none;
+      padding: 8px 12px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      cursor: pointer;
+    }
 
-.process-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-}
-.process-card {
-  padding:26px;
-  border-radius:17px;
-  background:#13131e;
-  border:1px solid var(--line);
-}
-.step-number {
-  color:#d8b4fe;
-  font-size:13px;
-  font-weight:900;
-}
-.process-card h3 { margin-top:12px; }
-.process-card p { color:var(--muted); font-size:14px; margin-top:8px; }
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: var(--gradient);
+      color: white;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: .25s;
+      box-shadow: 0 8px 20px #a855f733;
+    }
 
-.pricing-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-  align-items:stretch;
-}
-.price-card {
-  padding:28px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:var(--panel);
-}
-.price-card.featured {
-  border-color:#a78bfa;
-  background:linear-gradient(160deg,#251b38,#14131e 65%);
-  box-shadow:0 15px 55px #7c3aed18;
-}
-.price-tag {
-  display:inline-block;
-  color:#e9d5ff;
-  background:#302244;
-  border-radius:30px;
-  padding:5px 10px;
-  font-size:11px;
-  font-weight:800;
-}
-.price-card h3 { margin-top:16px; font-size:20px; }
-.price-value {
-  margin:15px 0;
-  font-size:34px;
-  font-weight:900;
-  letter-spacing:-1px;
-}
-.price-value small {
-  font-size:12px;
-  color:var(--muted);
-  font-weight:400;
-  letter-spacing:0;
-}
-.price-card p { color:var(--muted); font-size:13px; }
-.price-card ul {
-  list-style:none;
-  margin:20px 0;
-}
-.price-card li {
-  margin:9px 0;
-  font-size:13px;
-  color:#d0cede;
-}
-.price-card li::before { content:"✓"; color:#c4b5fd; margin-right:9px; }
-.price-card .button { width:100%; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 26px #a855f744; }
 
-.about-grid {
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:45px;
-  align-items:center;
-}
-.about-art {
-  min-height:280px;
-  border-radius:24px;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  background:
-    radial-gradient(circle at 25% 30%,#d8b4fe55,transparent 35%),
-    linear-gradient(145deg,#20162e,#12121d);
-  border:1px solid #433052;
-}
-.about-monogram {
-  font-size:76px;
-  font-weight:950;
-  letter-spacing:-7px;
-  background:linear-gradient(120deg,#c4b5fd,#f0abfc);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.about-art p { color:#c6b5d6; font-size:12px; letter-spacing:3px; }
-.about-copy h2 {
-  font-size:clamp(30px,4vw,44px);
-  line-height:1.15;
-  letter-spacing:-1.5px;
-}
-.about-copy p { color:var(--muted); margin-top:16px; }
+    .btn-outline {
+      background: white;
+      color: var(--purple);
+      border: 1px solid #d9c5f0;
+      box-shadow: none;
+    }
 
-.contact-panel {
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:35px;
-  padding:35px;
-  border:1px solid #443052;
-  border-radius:24px;
-  background:
-    radial-gradient(ellipse at top left,#4c1d9540,transparent 50%),
-    #13131e;
-}
-.contact-copy h2 {
-  font-size:clamp(30px,4vw,43px);
-  line-height:1.15;
-  letter-spacing:-1px;
-}
-.contact-copy p { color:var(--muted); margin-top:15px; }
-.contact-note {
-  margin-top:25px;
-  padding:13px;
-  border-radius:10px;
-  background:#20182d;
-  color:#e9d5ff;
-  font-size:13px;
-}
-form label {
-  display:block;
-  font-size:13px;
-  margin:13px 0 6px;
-  color:#dedbea;
-}
-form input, form select, form textarea {
-  width:100%;
-  padding:12px 13px;
-  border-radius:9px;
-  background:#0b0b12;
-  color:white;
-  border:1px solid #373244;
-  outline:none;
-}
-form input:focus, form select:focus, form textarea:focus {
-  border-color:#c4b5fd;
-}
-form textarea { resize:vertical; }
-form button { margin-top:16px; width:100%; }
+    .hero {
+      padding: 90px 0 75px;
+      background:
+        radial-gradient(ellipse at 90% 10%, #fce7f3 0, transparent 32%),
+        radial-gradient(ellipse at 5% 70%, #eee5ff 0, transparent 35%),
+        #fff;
+    }
 
-footer {
-  border-top:1px solid var(--line);
-  padding:28px 0;
-  color:var(--muted);
-  font-size:13px;
-}
-.footer-inner {
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-}
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 45px;
+      align-items: center;
+    }
 
-.whatsapp {
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:30;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:13px 17px;
-  border-radius:40px;
-  background:#25d366;
-  color:#052311;
-  font-size:13px;
-  font-weight:900;
-  box-shadow:0 8px 28px #0007;
-}
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 13px;
+      border: 1px solid #ead5ff;
+      background: #faf5ff;
+      border-radius: 50px;
+      color: var(--purple);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+    }
 
-@media(max-width:900px) {
-  .hero-grid { grid-template-columns:1fr; gap:45px; }
-  .hero { padding-top:75px; }
-  .showcase { max-width:530px; width:100%; margin:auto; }
-  .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .about-grid { grid-template-columns:1fr; }
-  .about-art { min-height:220px; }
-  .contact-panel { grid-template-columns:1fr; }
-}
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -3px;
+      margin: 22px 0;
+    }
 
-@media(max-width:650px) {
-  .navbar { padding:15px 0; justify-content:center; }
-  nav { width:100%; justify-content:center; gap:13px; flex-wrap:wrap; }
-  nav a { font-size:12px; }
-  .nav-cta { display:none; }
-  h1 { letter-spacing:-2px; }
-  .hero { padding:65px 0; }
-  .hero-copy { font-size:15px; }
-  .section { padding:65px 0; }
-  .section-head { margin-bottom:30px; }
-  .services-grid, .portfolio-grid, .process-grid, .pricing-grid {
-    grid-template-columns:1fr;
-  }
-  .project-preview { min-height:220px; }
-  .contact-panel { padding:22px 17px; }
-  .trust-row { gap:12px 18px; }
-  .footer-inner { justify-content:center; text-align:center; }
-}
-</style>
+    .hero p, .section-desc { color: var(--muted); }
+    .hero p { max-width: 550px; font-size: 1.08rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+    .hero-art {
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .art-glow {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fbcfe8, #ddd6fe);
+      filter: blur(5px);
+      animation: pulse 5s infinite alternate;
+    }
+
+    .art-card {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 360px);
+      padding: 26px;
+      background: white;
+      border: 1px solid #eee5f8;
+      border-radius: 25px;
+      box-shadow: 0 25px 70px #5b21b51c;
+      transform: rotate(-3deg);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .art-card small { color: var(--purple); font-weight: 800; }
+    .art-card h2 { font-size: 2.2rem; line-height: 1.2; margin: 15px 0; }
+    .art-card p { font-size: .9rem; }
+    .art-bar {
+      height: 10px;
+      margin-top: 12px;
+      border-radius: 10px;
+      background: #f1e8fb;
+    }
+
+    .art-bar:nth-of-type(2) { width: 80%; }
+    .art-bar:nth-of-type(3) { width: 60%; }
+    .art-button {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 8px 14px;
+      border-radius: 9px;
+      background: var(--gradient);
+      color: white;
+      font-size: .8rem;
+      font-weight: bold;
+    }
+
+    section { padding: 78px 0; }
+    .section-heading { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+    .section-heading h2, .about-copy h2, .contact-copy h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      margin: 12px 0;
+    }
+
+    .section-desc { margin-top: 10px; }
+    .soft-section { background: #fcfaff; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 8px 30px #4c1d9508;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px #4c1d9512;
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      background: #f6edff;
+      border-radius: 15px;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 { margin-bottom: 8px; font-size: 1.15rem; }
+    .card p { color: var(--muted); font-size: .92rem; }
+
+    .project-art {
+      min-height: 170px;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      background: linear-gradient(135deg, #6d28d9, #ec4899);
+      overflow: hidden;
+    }
+
+    .project-art h3 { font-size: 1.7rem; line-height: 1.2; }
+    .project-art p { color: #ffffffdd; margin-top: 9px; }
+    .project-art.pink { background: linear-gradient(135deg, #be185d, #fb7185); }
+    .project-art.blue { background: linear-gradient(135deg, #3730a3, #a78bfa); }
+    .project-art.orange { background: linear-gradient(135deg, #c2410c, #f9a8d4); }
+    .project-art.green { background: linear-gradient(135deg, #047857, #6ee7b7); }
+    .project-art.dark { background: linear-gradient(135deg, #312e81, #7c3aed); }
+    .project-info { padding-top: 17px; }
+    .project-info span { color: var(--purple); font-size: .78rem; font-weight: 800; }
+
+    .price { font-size: 2.4rem; font-weight: 900; margin: 15px 0; }
+    .price small { font-size: .85rem; color: var(--muted); font-weight: 500; }
+    .features { list-style: none; margin: 20px 0; color: var(--muted); font-size: .9rem; }
+    .features li { margin: 9px 0; }
+    .features li::before { content: "✓ "; color: var(--pink); font-weight: 900; }
+    .featured { border: 2px solid #d8b4fe; position: relative; }
+    .popular {
+      display: inline-block;
+      background: #f5e8ff;
+      color: var(--purple);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #faf5ff, #fce7f3);
+      border: 1px solid var(--border);
+    }
+
+    .about-logo {
+      width: 145px;
+      height: 145px;
+      display: grid;
+      place-items: center;
+      border-radius: 35px;
+      background: var(--gradient);
+      color: white;
+      font-size: 3.5rem;
+      font-weight: 900;
+      box-shadow: 0 20px 45px #a855f744;
+      transform: rotate(-7deg);
+    }
+
+    .about-copy p { color: var(--muted); margin: 12px 0; }
+    .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+    .about-point { background: var(--light); padding: 14px; border-radius: 12px; border: 1px solid var(--border); }
+    .about-point strong { display: block; color: var(--purple); }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 35px;
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background: linear-gradient(135deg, #fff, #fcf7ff);
+      box-shadow: 0 15px 50px #4c1d9509;
+    }
+
+    .contact-copy p { color: var(--muted); }
+    .contact-form { display: grid; gap: 14px; }
+    .contact-form label { display: block; font-size: .85rem; font-weight: 700; margin-bottom: 5px; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #e6d9f2;
+      border-radius: 10px;
+      background: white;
+      color: var(--ink);
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px #a855f71a;
+    }
+
+    textarea { min-height: 110px; resize: vertical; }
+    footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 90;
+      background: #25d366;
+      color: #063b1b;
+      padding: 13px 18px;
+      border-radius: 50px;
+      font-weight: 900;
+      box-shadow: 0 8px 25px #0002;
+    }
+
+    .reveal { animation: appear .8s ease both; }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(-1deg); } }
+    @keyframes pulse { to { transform: scale(1.08); opacity: .7; } }
+    @keyframes appear { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media(max-width: 850px) {
+      .hero-grid, .about-grid, .contact-panel { grid-template-columns: 1fr; }
+      .hero-copy-wrap { text-align: center; }
+      .hero-copy-wrap p { margin: auto; }
+      .hero-actions { justify-content: center; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-links { gap: 12px; font-size: .8rem; }
+      .nav-cta { display: none; }
+    }
+
+    @media(max-width: 600px) {
+      .nav { flex-wrap: wrap; padding: 10px 0; }
+      .menu-button { display: block; }
+      .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 9px 0; font-size: .95rem; }
+      .hero { padding: 60px 0 45px; }
+      h1 { font-size: 2.8rem; letter-spacing: -1.5px; }
+      .hero-art { min-height: 310px; }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+      .contact-panel { padding: 22px; }
+      .about-points { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
 </head>
 
 <body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <span class="brand-icon">A</span>
+      <span>AMAN<span class="gradient-text">.WEB</span> STUDIO</span>
+    </a>
 
-<header>
-  <div class="wrap navbar">
-    <a class="brand" href="#home">AMAN<span>.</span>WEB STUDIO</a>
+    <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
 
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    <a class="nav-cta" href="#contact">Start a Project ↗</a>
+    <a class="btn nav-cta" href="#contact">Start a Project ↗</a>
   </div>
 </header>
 
 <main>
-
-<section class="hero" id="home">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow"><span class="dot"></span> INDEPENDENT DIGITAL STUDIO</span>
-
-      <h1>
-        Ideas into<br>
-        <span class="gradient-text">digital magic.</span>
-      </h1>
-
-      <p class="hero-copy">
-        We design modern websites and creative visuals that help
-        businesses, creators, and personal brands stand out online.
-      </p>
-
-      <div class="button-row">
-        <a class="button button-primary" href="#portfolio">Explore Our Work ↗</a>
-        <a class="button button-secondary" href="#contact">Let's Talk</a>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy-wrap reveal">
+        <span class="eyebrow">Independent Digital Studio</span>
+        <h1>Ideas into <span class="gradient-text">digital magic.</span></h1>
+        <p>We build beautiful websites, memorable brands and creative digital designs that help your business stand out online.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#portfolio">Explore Our Work ↗</a>
+          <a class="btn btn-outline" href="#services">Discover Services</a>
+        </div>
       </div>
 
-      <div class="trust-row">
-        <span>Modern Design</span>
-        <span>Mobile Friendly</span>
-        <span>Creative Thinking</span>
+      <div class="hero-art">
+        <div class="art-glow"></div>
+        <div class="art-card">
+          <small>✦ AMAN WEB STUDIO</small>
+          <h2>Design that makes you <span class="gradient-text">different.</span></h2>
+          <p>Creative ideas. Beautiful design. Better digital experiences.</p>
+          <div class="art-bar"></div>
+          <div class="art-bar"></div>
+          <div class="art-bar"></div>
+          <span class="art-button">LET'S CREATE ↗</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="showcase">
-      <div class="browser-bar">
-        <i></i><i></i><i></i>
-        <span class="browser-label">YOUR NEXT WEBSITE</span>
+  <section id="services" class="soft-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">What We Do</span>
+        <h2>Everything your brand needs to <span class="gradient-text">grow.</span></h2>
+        <p class="section-desc">Creative digital services to take your ideas from concept to reality.</p>
       </div>
 
-      <div class="mock-site">
-        <div class="mock-logo">STUDIO / DIGITAL</div>
-        <span class="mock-pill">DESIGN THAT STANDS OUT</span>
-        <h3>Make your brand impossible to ignore.</h3>
-        <p>Beautiful digital experiences for ambitious ideas.</p>
-        <span class="mock-button">Discover More ↗</span>
+      <div class="cards">
+        <article class="card reveal"><div class="service-icon">💻</div><h3>Website Design</h3><p>Modern, responsive websites that look great on phones and computers.</p></article>
+        <article class="card reveal"><div class="service-icon">🎨</div><h3>Logo & Branding</h3><p>Unique logo concepts and visual identities for your brand.</p></article>
+        <article class="card reveal"><div class="service-icon">🛍️</div><h3>E-commerce Website</h3><p>Beautiful online store designs to showcase your products.</p></article>
+        <article class="card reveal"><div class="service-icon">📱</div><h3>Social Media Design</h3><p>Eye-catching posts and creative graphics for your social accounts.</p></article>
+        <article class="card reveal"><div class="service-icon">▶️</div><h3>YouTube Thumbnails</h3><p>Bold thumbnails designed to help your videos get noticed.</p></article>
+        <article class="card reveal"><div class="service-icon">⚡</div><h3>Website Redesign</h3><p>Give an existing website a fresh, modern and professional look.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Selected Concepts</span>
+        <h2>Ideas brought to <span class="gradient-text">life.</span></h2>
+        <p class="section-desc">A few sample concepts showing our creative direction.</p>
       </div>
 
-      <div class="float-tag">✦ Creative by design</div>
+      <div class="cards">
+        <article class="card reveal"><div class="project-art"><h3>NOVA<br>BUSINESS</h3><p>Modern business website concept</p></div><div class="project-info"><span>Website Design</span><h3>Nova Business</h3><p>Clean layouts and modern design.</p></div></article>
+        <article class="card reveal"><div class="project-art pink"><h3>YOUR<br>BRAND</h3><p>Bold and memorable identity</p></div><div class="project-info"><span>Brand Identity</span><h3>Creative Branding</h3><p>A fresh visual style for a growing brand.</p></div></article>
+        <article class="card reveal"><div class="project-art blue"><h3>CREATE.<br>INSPIRE.</h3><p>Creator channel concept</p></div><div class="project-info"><span>Creator Design</span><h3>YouTube Thumbnail</h3><p>Strong visuals for digital creators.</p></div></article>
+        <article class="card reveal"><div class="project-art orange"><h3>SHOP<br>THE LOOK</h3><p>Online store concept</p></div><div class="project-info"><span>E-commerce</span><h3>Online Store</h3><p>Product-focused shopping experience.</p></div></article>
+        <article class="card reveal"><div class="project-art green"><h3>GROW<br>ONLINE</h3><p>Social media campaign</p></div><div class="project-info"><span>Social Media</span><h3>Social Campaign</h3><p>Bright graphics for online promotion.</p></div></article>
+        <article class="card reveal"><div class="project-art dark"><h3>LESS BUT<br>BETTER.</h3><p>Minimal mobile design</p></div><div class="project-info"><span>UI / UX</span><h3>Mobile Experience</h3><p>A simple, polished digital interface.</p></div></article>
+      </div>
+      <p class="section-desc" style="text-align:center;margin-top:25px">Portfolio cards are sample concepts. Replace them with real client work when available.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">WHAT WE DO</span>
-      <h2>Everything your brand needs to <span class="gradient-text">grow.</span></h2>
-      <p>Creative digital services to help you build a stronger online presence.</p>
+  <section id="pricing" class="soft-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Simple Pricing</span>
+        <h2>Small budget. <span class="gradient-text">Big ideas.</span></h2>
+        <p class="section-desc">Starting prices for common design projects. Final quotes depend on requirements.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <h3>Logo Design</h3><p>For a new brand or small business.</p>
+          <div class="price">₹499 <small>/ starting</small></div>
+          <ul class="features"><li>Custom logo concept</li><li>Colour direction</li><li>Social-ready design</li><li>Revision as agreed</li></ul>
+          <a class="btn btn-outline" href="#contact">Choose Logo</a>
+        </article>
+
+        <article class="card featured reveal">
+          <span class="popular">POPULAR</span>
+          <h3 style="margin-top:12px">Business Website</h3><p>A professional online presence.</p>
+          <div class="price">₹2,999 <small>/ starting</small></div>
+          <ul class="features"><li>Responsive page design</li><li>Services and about sections</li><li>Contact / WhatsApp button</li><li>Basic SEO setup</li></ul>
+          <a class="btn" href="#contact">Choose Website</a>
+        </article>
+
+        <article class="card reveal">
+          <h3>YouTube Thumbnail</h3><p>For creators and video channels.</p>
+          <div class="price">₹199 <small>/ starting</small></div>
+          <ul class="features"><li>Custom thumbnail design</li><li>Bold text and colours</li><li>Video-focused layout</li><li>High-quality export</li></ul>
+          <a class="btn btn-outline" href="#contact">Choose Thumbnail</a>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="services-grid">
-      <article class="service-card">
-        <div class="service-icon">⌘</div>
-        <h3>Website Design</h3>
-        <p>Modern websites for businesses, personal brands, and online services.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">✳</div>
-        <h3>Logo & Branding</h3>
-        <p>Memorable visual identities, logo concepts, and brand graphics.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">▶</div>
-        <h3>Creator Graphics</h3>
-        <p>Eye-catching YouTube thumbnails, banners, and social content.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">↗</div>
-        <h3>Landing Pages</h3>
-        <p>Focused landing pages to present your services and ideas clearly.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section-soft" id="portfolio">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">SELECTED CONCEPTS</span>
-      <h2>Ideas brought to <span class="gradient-text">life.</span></h2>
-      <p>Explore sample visual concepts for different types of digital projects.</p>
-    </div>
-
-    <div class="portfolio-grid">
-
-      <article class="project">
-        <div class="project-preview preview-business">
-          <div class="preview-window">
-            <div class="window-top"><span></span><span></span><span></span></div>
-            <div class="window-content">
-              <div class="window-nav"><span>NOVA BUSINESS</span><span>ABOUT　 SERVICES</span></div>
-              <h4>Business that moves you forward.</h4>
-              <p>Smart solutions for the next generation of business.</p>
-              <span class="window-cta">Explore Services ↗</span>
-            </div>
-          </div>
-          <span class="preview-bottom">01 / WEB DESIGN</span>
-        </div>
-        <div class="project-info">
-          <div class="project-meta"><span>CONCEPT 01</span><span>WEBSITE</span></div>
-          <h3>Business Website</h3>
-          <p>A clean business website concept with a professional layout.</p>
-          <a href="#contact">Create something similar ↗</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-preview preview-shop">
-          <div class="preview-window">
-            <div class="window-top"><span></span><span></span><span></span></div>
-            <div class="window-content">
-              <div class="window-nav"><span>FORM & FOUND</span><span>SHOP　 BAG</span></div>
-              <h4>Everyday essentials. Elevated.</h4>
-              <div class="shop-window">
-                <div class="product-tile">👟</div>
-                <div class="product-tile">👜</div>
-              </div>
-            </div>
-          </div>
-          <span class="preview-bottom">02 / ONLINE STORE</span>
-        </div>
-        <div class="project-info">
-          <div class="project-meta"><span>CONCEPT 02</span><span>E-COMMERCE</span></div>
-          <h3>Online Store</h3>
-          <p>A sample shopping experience for showcasing products online.</p>
-          <a href="#contact">Create something similar ↗</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-preview preview-creator">
-          <div class="preview-window creator-window">
-            <div>
-              <h4>LEVEL UP<br>YOUR GAME!</h4>
-              <p>CREATOR THUMBNAIL CONCEPT</p>
-            </div>
-          </div>
-          <span class="preview-bottom">03 / CREATOR DESIGN</span>
-        </div>
-        <div class="project-info">
-          <div class="project-meta"><span>CONCEPT 03</span><span>GRAPHICS</span></div>
-          <h3>YouTube Thumbnail</h3>
-          <p>A bold thumbnail concept designed to catch the viewer's eye.</p>
-          <a href="#contact">Create something similar ↗</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-preview preview-portfolio">
-          <div class="preview-window">
-            <div class="window-top"><span></span><span></span><span></span></div>
-            <div class="window-c
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-visual"><div class="about-logo">A.</div></div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">About Our Studio</span>
+        <h2>Creative thinking. <span class="gradient-text">Real impact.</span></h2>
+        <p>Aman Web Studio helps businesses, creators and individuals build a strong digital presence with clean design and practical solutions.</p>
+        <p>Our focus is simple: understand your idea, create a design that fits your goals, and make the experience easy for your customers.</p>
+        <div class="about-points">
+          <div class="about-point"><strong>01 / Creative</strong>Fresh visual ideas</div>
+          <div class="about-point"><strong>02 / Resp
