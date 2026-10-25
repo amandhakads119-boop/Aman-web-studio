@@ -1,169 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="oRcGKEJmW3h8Ul5tYeK4qqT45sJvpEhpA-eoQPygzSc" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aman Web Studio creates beautiful websites, logos and social media designs.">
+
+  <title>Aman Web Studio | Website Design & Digital Services</title>
+  <meta name="description" content="Aman Web Studio offers modern website design, portfolio websites, landing pages and digital services. Contact us on WhatsApp.">
   <meta name="theme-color" content="#ffffff">
-  <title>Aman Web Studio | Creative Digital Agency</title>
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="oRcGKEJmW3h8Ul5tYeK4qqT45sJvpEhpA-eoQPygzSc" />
 
   <style>
     :root {
-      --purple: #7928ca;
-      --pink: #f43f9b;
-      --ink: #211632;
-      --muted: #6f687c;
-      --light: #faf7ff;
-      --border: #eee5f8;
-      --gradient: linear-gradient(120deg, #7928ca, #f43f9b);
+      --purple: #7545f5;
+      --pink: #ed4da7;
+      --dark: #171329;
+      --muted: #6d687e;
+      --light: #f8f6ff;
+      --border: #eae5f5;
+      --white: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
     body {
-      background: #ffffff;
-      color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--dark);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
-    .container { width: min(1120px, 90%); margin: auto; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button, .btn {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
     .gradient-text {
-      background: var(--gradient);
+      background: linear-gradient(100deg, var(--purple), var(--pink));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .header {
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.2;
+      margin: 12px 0;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 20px;
+      font-weight: 700;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px #7545f52b;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(100deg, var(--purple), var(--pink));
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    /* Navigation */
+    .navbar {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--border);
+      background: #ffffffed;
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #eee9f7;
     }
 
-    .nav {
-      min-height: 76px;
+    .nav-inner {
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .logo {
+      font-size: 22px;
       font-weight: 900;
-      font-size: 1.1rem;
+      letter-spacing: -.8px;
     }
 
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: var(--gradient);
-      color: white;
-      box-shadow: 0 7px 20px #a855f744;
+    .logo span {
+      color: var(--purple);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
-      list-style: none;
-      font-size: .9rem;
-      font-weight: 600;
+      gap: 23px;
+      font-size: 14px;
+      font-weight: 700;
     }
 
-    .nav-links a:hover { color: var(--pink); }
-    .menu-button {
+    .nav-links a:hover {
+      color: var(--purple);
+    }
+
+    .menu-toggle {
       display: none;
-      padding: 8px 12px;
       background: white;
       border: 1px solid var(--border);
       border-radius: 9px;
-      cursor: pointer;
+      padding: 7px 12px;
+      font-size: 22px;
     }
 
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 12px;
-      background: var(--gradient);
-      color: white;
-      font-weight: 800;
-      border: none;
-      cursor: pointer;
-      transition: .25s;
-      box-shadow: 0 8px 20px #a855f733;
-    }
-
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 26px #a855f744; }
-
-    .btn-outline {
-      background: white;
-      color: var(--purple);
-      border: 1px solid #d9c5f0;
-      box-shadow: none;
-    }
-
+    /* Hero */
     .hero {
-      padding: 90px 0 75px;
+      position: relative;
+      padding: 95px 0 85px;
+      overflow: hidden;
       background:
-        radial-gradient(ellipse at 90% 10%, #fce7f3 0, transparent 32%),
-        radial-gradient(ellipse at 5% 70%, #eee5ff 0, transparent 35%),
-        #fff;
+        radial-gradient(ellipse at 10% 10%, #f0e9ff 0, transparent 38%),
+        radial-gradient(ellipse at 90% 20%, #ffeaf5 0, transparent 34%),
+        white;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 45px;
       align-items: center;
+      gap: 50px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      padding: 6px 13px;
-      border: 1px solid #ead5ff;
-      background: #faf5ff;
-      border-radius: 50px;
-      color: var(--purple);
-      font-size: .75rem;
-      font-weight: 800;
-      letter-spacing: 1.3px;
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid #e7ddff;
+      border-radius: 30px;
+      background: #ffffffb8;
+      color: #5c3ab5;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 22px;
     }
 
-    h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
+    .green-dot {
+      width: 8px;
+      height: 8px;
+      background: #25bb72;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(39px, 5.5vw, 66px);
       line-height: 1.08;
-      letter-spacing: -3px;
-      margin: 22px 0;
+      letter-spacing: -2.4px;
+      margin-bottom: 22px;
     }
 
-    .hero p, .section-desc { color: var(--muted); }
-    .hero p { max-width: 550px; font-size: 1.08rem; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-copy {
+      max-width: 550px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
 
     .hero-art {
-      min-height: 360px;
+      position: relative;
+      min-height: 365px;
       display: grid;
       place-items: center;
-      position: relative;
     }
 
     .art-glow {
@@ -171,381 +249,689 @@
       width: 280px;
       height: 280px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #fbcfe8, #ddd6fe);
-      filter: blur(5px);
-      animation: pulse 5s infinite alternate;
+      background: linear-gradient(135deg, #bca5ff, #ffb8dc);
+      filter: blur(10px);
+      opacity: .6;
     }
 
-    .art-card {
+    .browser-card {
       position: relative;
-      z-index: 1;
-      width: min(100%, 360px);
-      padding: 26px;
+      width: min(100%, 390px);
+      padding: 15px;
       background: white;
-      border: 1px solid #eee5f8;
-      border-radius: 25px;
-      box-shadow: 0 25px 70px #5b21b51c;
-      transform: rotate(-3deg);
+      border: 1px solid #eee8fb;
+      border-radius: 20px;
+      box-shadow: 0 25px 70px #40207120;
+      transform: rotate(-2deg);
       animation: float 5s ease-in-out infinite;
     }
 
-    .art-card small { color: var(--purple); font-weight: 800; }
-    .art-card h2 { font-size: 2.2rem; line-height: 1.2; margin: 15px 0; }
-    .art-card p { font-size: .9rem; }
-    .art-bar {
-      height: 10px;
-      margin-top: 12px;
-      border-radius: 10px;
-      background: #f1e8fb;
-    }
-
-    .art-bar:nth-of-type(2) { width: 80%; }
-    .art-bar:nth-of-type(3) { width: 60%; }
-    .art-button {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 8px 14px;
-      border-radius: 9px;
-      background: var(--gradient);
-      color: white;
-      font-size: .8rem;
-      font-weight: bold;
-    }
-
-    section { padding: 78px 0; }
-    .section-heading { text-align: center; max-width: 680px; margin: 0 auto 40px; }
-    .section-heading h2, .about-copy h2, .contact-copy h2 {
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.2;
-      letter-spacing: -1.5px;
-      margin: 12px 0;
-    }
-
-    .section-desc { margin-top: 10px; }
-    .soft-section { background: #fcfaff; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: white;
-      box-shadow: 0 8px 30px #4c1d9508;
-      transition: transform .25s, box-shadow .25s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 35px #4c1d9512;
-    }
-
-    .service-icon {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      background: #f6edff;
-      border-radius: 15px;
-      font-size: 1.6rem;
-      margin-bottom: 18px;
-    }
-
-    .card h3 { margin-bottom: 8px; font-size: 1.15rem; }
-    .card p { color: var(--muted); font-size: .92rem; }
-
-    .project-art {
-      min-height: 170px;
-      border-radius: 14px;
-      padding: 22px;
+    .browser-top {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: white;
-      background: linear-gradient(135deg, #6d28d9, #ec4899);
-      overflow: hidden;
+      gap: 5px;
+      padding: 3px 0 14px;
     }
 
-    .project-art h3 { font-size: 1.7rem; line-height: 1.2; }
-    .project-art p { color: #ffffffdd; margin-top: 9px; }
-    .project-art.pink { background: linear-gradient(135deg, #be185d, #fb7185); }
-    .project-art.blue { background: linear-gradient(135deg, #3730a3, #a78bfa); }
-    .project-art.orange { background: linear-gradient(135deg, #c2410c, #f9a8d4); }
-    .project-art.green { background: linear-gradient(135deg, #047857, #6ee7b7); }
-    .project-art.dark { background: linear-gradient(135deg, #312e81, #7c3aed); }
-    .project-info { padding-top: 17px; }
-    .project-info span { color: var(--purple); font-size: .78rem; font-weight: 800; }
+    .browser-top i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #f0a4c9;
+    }
 
-    .price { font-size: 2.4rem; font-weight: 900; margin: 15px 0; }
-    .price small { font-size: .85rem; color: var(--muted); font-weight: 500; }
-    .features { list-style: none; margin: 20px 0; color: var(--muted); font-size: .9rem; }
-    .features li { margin: 9px 0; }
-    .features li::before { content: "✓ "; color: var(--pink); font-weight: 900; }
-    .featured { border: 2px solid #d8b4fe; position: relative; }
-    .popular {
-      display: inline-block;
-      background: #f5e8ff;
+    .browser-top i:nth-child(2) { background: #c8b4ff; }
+    .browser-top i:nth-child(3) { background: #a4e5c4; }
+
+    .mock-page {
+      min-height: 235px;
+      padding: 25px;
+      border-radius: 13px;
+      background: linear-gradient(140deg, #f4edff, #fff0f7);
+    }
+
+    .mock-label {
+      font-size: 10px;
+      letter-spacing: 2px;
       color: var(--purple);
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: .72rem;
+      font-weight: 900;
+    }
+
+    .mock-page h3 {
+      font-size: 30px;
+      line-height: 1.15;
+      margin: 16px 0;
+    }
+
+    .mock-page p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .mock-pill {
+      display: inline-block;
+      background: linear-gradient(100deg, var(--purple), var(--pink));
+      color: white;
+      border-radius: 7px;
+      padding: 8px 13px;
+      font-size: 11px;
+      margin-top: 20px;
+    }
+
+    .floating-tag {
+      position: absolute;
+      padding: 12px 16px;
+      border-radius: 13px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 35px #40207112;
+      font-size: 12px;
       font-weight: 800;
     }
 
+    .tag-one { left: -5px; bottom: 34px; }
+    .tag-two { right: -3px; top: 30px; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-10px) rotate(0deg); }
+    }
+
+    /* Trust strip */
+    .trust-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+      background: #fff;
+    }
+
+    .trust-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px 45px;
+      color: #514968;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card,
+    .portfolio-card,
+    .price-card,
+    .contact-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: white;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .service-card:hover,
+    .portfolio-card:hover,
+    .price-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px #36205d12;
+    }
+
+    .service-card {
+      padding: 27px;
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 53px;
+      height: 53px;
+      margin-bottom: 19px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #f0eaff, #ffebf5);
+      font-size: 25px;
+    }
+
+    .service-card h3,
+    .portfolio-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .service-card p,
+    .portfolio-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .service-number {
+      margin-top: 22px;
+      font-size: 12px;
+      color: var(--purple);
+      font-weight: 900;
+    }
+
+    /* Portfolio */
+    .portfolio-section {
+      background: var(--light);
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+    }
+
+    .portfolio-art {
+      min-height: 190px;
+      padding: 22px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #eee5ff, #ffe8f4);
+    }
+
+    .portfolio-art.two {
+      background: linear-gradient(135deg, #e1f6ef, #e9e8ff);
+    }
+
+    .portfolio-art.three {
+      background: linear-gradient(135deg, #fff0df, #f7e4ff);
+    }
+
+    .mini-window {
+      width: 85%;
+      padding: 14px;
+      border-radius: 11px;
+      background: white;
+      box-shadow: 0 10px 25px #31214b15;
+    }
+
+    .mini-line {
+      height: 7px;
+      margin: 8px 0;
+      border-radius: 8px;
+      background: #eee8fb;
+    }
+
+    .mini-line.short { width: 55%; }
+    .mini-line.color { width: 43%; background: linear-gradient(90deg, var(--purple), var(--pink)); }
+
+    .portfolio-info {
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      margin-bottom: 10px;
+      background: #f3edff;
+      color: var(--purple);
+      border-radius: 7px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      padding: 27px;
+      position: relative;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--purple);
+      box-shadow: 0 15px 40px #7545f51c;
+    }
+
+    .popular {
+      position: absolute;
+      top: -13px;
+      right: 20px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      color: white;
+      background: linear-gradient(100deg, var(--purple), var(--pink));
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .price-card h3 { font-size: 20px; }
+    .price-card .price-desc { color: var(--muted); font-size: 13px; margin: 8px 0 17px; }
+    .price-card .price { font-size: 32px; font-weight: 900; letter-spacing: -1px; }
+    .price-card .price small { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+
+    .feature-list {
+      list-style: none;
+      margin: 20px 0 25px;
+    }
+
+    .feature-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0edf6;
+      font-size: 13px;
+      color: #504960;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: var(--purple);
+      font-weight: 900;
+      margin-right: 9px;
+    }
+
+    .price-card .btn {
+      width: 100%;
+    }
+
+    .pricing-note {
+      text-align: center;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
-      gap: 45px;
+      gap: 55px;
       align-items: center;
     }
 
     .about-visual {
-      min-height: 300px;
-      display: grid;
-      place-items: center;
+      min-height: 320px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 25px;
-      background: linear-gradient(135deg, #faf5ff, #fce7f3);
-      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 20% 20%, #d8caff, transparent 40%),
+        linear-gradient(140deg, #f4edff, #ffedf6);
     }
 
     .about-logo {
-      width: 145px;
-      height: 145px;
+      width: 190px;
+      height: 190px;
       display: grid;
       place-items: center;
+      border: 1px solid #ffffffc9;
       border-radius: 35px;
-      background: var(--gradient);
-      color: white;
-      font-size: 3.5rem;
-      font-weight: 900;
-      box-shadow: 0 20px 45px #a855f744;
-      transform: rotate(-7deg);
+      background: #ffffffbd;
+      box-shadow: 0 20px 55px #6b42b51a;
+      text-align: center;
     }
 
-    .about-copy p { color: var(--muted); margin: 12px 0; }
-    .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
-    .about-point { background: var(--light); padding: 14px; border-radius: 12px; border: 1px solid var(--border); }
-    .about-point strong { display: block; color: var(--purple); }
+    .about-logo strong {
+      display: block;
+      font-size: 42px;
+      line-height: 1.1;
+    }
 
-    .contact-panel {
+    .about-logo span {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--purple);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin: 15px 0;
+    }
+
+    .about-points {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 35px;
-      padding: 35px;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 23px 0;
+    }
+
+    .about-point {
+      padding: 14px;
       border: 1px solid var(--border);
-      border-radius: 25px;
-      background: linear-gradient(135deg, #fff, #fcf7ff);
-      box-shadow: 0 15px 50px #4c1d9509;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    .contact-copy p { color: var(--muted); }
-    .contact-form { display: grid; gap: 14px; }
-    .contact-form label { display: block; font-size: .85rem; font-weight: 700; margin-bottom: 5px; }
+    .about-point strong {
+      display: block;
+      color: var(--purple);
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
 
-    input, select, textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #e6d9f2;
-      border-radius: 10px;
+    /* Contact */
+    .contact-section {
+      background: linear-gradient(140deg, #f7f3ff, #fff3f9);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      margin-top: 12px;
+    }
+
+    .contact-copy > p {
+      color: var(--muted);
+      margin: 15px 0 25px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 20px 0;
+    }
+
+    .detail-icon {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
       background: white;
-      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+
+    .contact-detail small {
+      display: block;
+      color: var(--muted);
+    }
+
+    .contact-detail strong {
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card {
+      padding: 28px;
+      box-shadow: 0 15px 45px #4a277b0c;
+    }
+
+    .contact-card h3 {
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .form-intro {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 13px;
+      color: var(--dark);
+      background: #fdfcff;
+      border: 1px solid #e7e1f1;
+      border-radius: 10px;
       outline: none;
+      transition: border-color .2s, box-shadow .2s;
     }
 
-    input:focus, select:focus, textarea:focus {
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
       border-color: var(--purple);
-      box-shadow: 0 0 0 3px #a855f71a;
+      box-shadow: 0 0 0 3px #7545f515;
     }
 
-    textarea { min-height: 110px; resize: vertical; }
-    footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); }
-    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-    .whatsapp {
+    .form-group textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .contact-card .btn {
+      width: 100%;
+    }
+
+    .form-privacy {
+      font-size: 11px;
+      text-align: center;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* CTA */
+    .cta-wrap {
+      padding: 60px 0;
+    }
+
+    .cta {
+      padding: 45px 30px;
+      border-radius: 23px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(115deg, #6940e8, #e84da4);
+    }
+
+    .cta h2 {
+      margin-top: 0;
+    }
+
+    .cta p {
+      color: #ffffffde;
+      margin: 10px auto 23px;
+      max-width: 550px;
+    }
+
+    .cta .btn {
+      color: var(--purple);
+      background: white;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--purple);
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
       z-index: 90;
-      background: #25d366;
-      color: #063b1b;
-      padding: 13px 18px;
-      border-radius: 50px;
-      font-weight: 900;
-      box-shadow: 0 8px 25px #0002;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #20bd68;
+      color: white;
+      font-size: 27px;
+      box-shadow: 0 8px 25px #159b513b;
+      transition: transform .2s;
     }
 
-    .reveal { animation: appear .8s ease both; }
-    @keyframes float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(-1deg); } }
-    @keyframes pulse { to { transform: scale(1.08); opacity: .7; } }
-    @keyframes appear { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-
-    @media(max-width: 850px) {
-      .hero-grid, .about-grid, .contact-panel { grid-template-columns: 1fr; }
-      .hero-copy-wrap { text-align: center; }
-      .hero-copy-wrap p { margin: auto; }
-      .hero-actions { justify-content: center; }
-      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .nav-links { gap: 12px; font-size: .8rem; }
-      .nav-cta { display: none; }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
     }
 
-    @media(max-width: 600px) {
-      .nav { flex-wrap: wrap; padding: 10px 0; }
-      .menu-button { display: block; }
-      .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid { gap: 25px; }
+      .hero-art { min-height: 330px; }
+      .about-grid { gap: 30px; }
+      .cards, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { gap: 25px; }
+      .about-visual { min-height: 260px; }
+    }
+
+    @media (max-width: 620px) {
+      .section { padding: 62px 0; }
+      .hero { padding: 65px 0 50px; }
+      .hero h1 { letter-spacing: -1.5px; }
+      .hero-copy { font-size: 15px; }
+      .hero-art { min-height: 290px; }
+      .browser-card { width: 88%; }
+      .mock-page { min-height: 195px; padding: 20px; }
+      .mock-page h3 { font-size: 25px; }
+      .floating-tag { font-size: 10px; padding: 9px 11px; }
+      .tag-one { left: 0; bottom: 10px; }
+      .tag-two { right: 0; top: 8px; }
+
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 18px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
       .nav-links.open { display: flex; }
-      .nav-links a { display: block; padding: 9px 0; font-size: .95rem; }
-      .hero { padding: 60px 0 45px; }
-      h1 { font-size: 2.8rem; letter-spacing: -1.5px; }
-      .hero-art { min-height: 310px; }
-      .cards { grid-template-columns: 1fr; }
-      section { padding: 60px 0; }
-      .contact-panel { padding: 22px; }
-      .about-points { grid-template-columns: 1fr 1fr; }
-      .footer-inner { flex-direction: column; text-align: center; }
-    }
+      .nav-links a { padding: 11px 0; }
+      .nav-links .btn { margin-top: 8px; }
 
-    @media(prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; }
+      .cards, .pricing-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .contact-card { padding: 21px; }
+      .about-points { grid-template-columns: 1fr 1fr; }
+      .trust-inner { gap: 12px 22px; }
+      .cta { padding: 35px 20px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
     }
   </style>
 </head>
 
 <body>
-<header class="header">
-  <div class="container nav">
-    <a class="brand" href="#home">
-      <span class="brand-icon">A</span>
-      <span>AMAN<span class="gradient-text">.WEB</span> STUDIO</span>
-    </a>
 
-    <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Aman<span>.</span>Web Studio</a>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+      <button class="menu-toggle" id="menuToggle"
+        type="button" aria-label="Open navigation menu"
+        aria-expanded="false">☰</button>
 
-    <a class="btn nav-cta" href="#contact">Start a Project ↗</a>
-  </div>
-</header>
-
-<main>
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-copy-wrap reveal">
-        <span class="eyebrow">Independent Digital Studio</span>
-        <h1>Ideas into <span class="gradient-text">digital magic.</span></h1>
-        <p>We build beautiful websites, memorable brands and creative digital designs that help your business stand out online.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#portfolio">Explore Our Work ↗</a>
-          <a class="btn btn-outline" href="#services">Discover Services</a>
-        </div>
-      </div>
-
-      <div class="hero-art">
-        <div class="art-glow"></div>
-        <div class="art-card">
-          <small>✦ AMAN WEB STUDIO</small>
-          <h2>Design that makes you <span class="gradient-text">different.</span></h2>
-          <p>Creative ideas. Beautiful design. Better digital experiences.</p>
-          <div class="art-bar"></div>
-          <div class="art-bar"></div>
-          <div class="art-bar"></div>
-          <span class="art-button">LET'S CREATE ↗</span>
-        </div>
-      </div>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Let's Talk ↗</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="services" class="soft-section">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">What We Do</span>
-        <h2>Everything your brand needs to <span class="gradient-text">grow.</span></h2>
-        <p class="section-desc">Creative digital services to take your ideas from concept to reality.</p>
-      </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="availability">
+            <span class="green-dot"></span>
+            Website projects & enquiries welcome
+          </div>
 
-      <div class="cards">
-        <article class="card reveal"><div class="service-icon">💻</div><h3>Website Design</h3><p>Modern, responsive websites that look great on phones and computers.</p></article>
-        <article class="card reveal"><div class="service-icon">🎨</div><h3>Logo & Branding</h3><p>Unique logo concepts and visual identities for your brand.</p></article>
-        <article class="card reveal"><div class="service-icon">🛍️</div><h3>E-commerce Website</h3><p>Beautiful online store designs to showcase your products.</p></article>
-        <article class="card reveal"><div class="service-icon">📱</div><h3>Social Media Design</h3><p>Eye-catching posts and creative graphics for your social accounts.</p></article>
-        <article class="card reveal"><div class="service-icon">▶️</div><h3>YouTube Thumbnails</h3><p>Bold thumbnails designed to help your videos get noticed.</p></article>
-        <article class="card reveal"><div class="service-icon">⚡</div><h3>Website Redesign</h3><p>Give an existing website a fresh, modern and professional look.</p></article>
-      </div>
-    </div>
-  </section>
+          <h1>
+            Your Ideas.<br>
+            Our <span class="gradient-text">Digital</span><br>
+            Experience.
+          </h1>
 
-  <section id="portfolio">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">Selected Concepts</span>
-        <h2>Ideas brought to <span class="gradient-text">life.</span></h2>
-        <p class="section-desc">A few sample concepts showing our creative direction.</p>
-      </div>
+          <p class="hero-copy">
+            Welcome to Aman Web Studio. We help bring your ideas online
+            with modern website designs, clean layouts and mobile-friendly
+            experiences for your brand or business.
+          </p>
 
-      <div class="cards">
-        <article class="card reveal"><div class="project-art"><h3>NOVA<br>BUSINESS</h3><p>Modern business website concept</p></div><div class="project-info"><span>Website Design</span><h3>Nova Business</h3><p>Clean layouts and modern design.</p></div></article>
-        <article class="card reveal"><div class="project-art pink"><h3>YOUR<br>BRAND</h3><p>Bold and memorable identity</p></div><div class="project-info"><span>Brand Identity</span><h3>Creative Branding</h3><p>A fresh visual style for a growing brand.</p></div></article>
-        <article class="card reveal"><div class="project-art blue"><h3>CREATE.<br>INSPIRE.</h3><p>Creator channel concept</p></div><div class="project-info"><span>Creator Design</span><h3>YouTube Thumbnail</h3><p>Strong visuals for digital creators.</p></div></article>
-        <article class="card reveal"><div class="project-art orange"><h3>SHOP<br>THE LOOK</h3><p>Online store concept</p></div><div class="project-info"><span>E-commerce</span><h3>Online Store</h3><p>Product-focused shopping experience.</p></div></article>
-        <article class="card reveal"><div class="project-art green"><h3>GROW<br>ONLINE</h3><p>Social media campaign</p></div><div class="project-info"><span>Social Media</span><h3>Social Campaign</h3><p>Bright graphics for online promotion.</p></div></article>
-        <article class="card reveal"><div class="project-art dark"><h3>LESS BUT<br>BETTER.</h3><p>Minimal mobile design</p></div><div class="project-info"><span>UI / UX</span><h3>Mobile Experience</h3><p>A simple, polished digital interface.</p></div></article>
-      </div>
-      <p class="section-desc" style="text-align:center;margin-top:25px">Portfolio cards are sample concepts. Replace them with real client work when available.</p>
-    </div>
-  </section>
-
-  <section id="pricing" class="soft-section">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">Simple Pricing</span>
-        <h2>Small budget. <span class="gradient-text">Big ideas.</span></h2>
-        <p class="section-desc">Starting prices for common design projects. Final quotes depend on requirements.</p>
-      </div>
-
-      <div class="cards">
-        <article class="card reveal">
-          <h3>Logo Design</h3><p>For a new brand or small business.</p>
-          <div class="price">₹499 <small>/ starting</small></div>
-          <ul class="features"><li>Custom logo concept</li><li>Colour direction</li><li>Social-ready design</li><li>Revision as agreed</li></ul>
-          <a class="btn btn-outline" href="#contact">Choose Logo</a>
-        </article>
-
-        <article class="card featured reveal">
-          <span class="popular">POPULAR</span>
-          <h3 style="margin-top:12px">Business Website</h3><p>A professional online presence.</p>
-          <div class="price">₹2,999 <small>/ starting</small></div>
-          <ul class="features"><li>Responsive page design</li><li>Services and about sections</li><li>Contact / WhatsApp button</li><li>Basic SEO setup</li></ul>
-          <a class="btn" href="#contact">Choose Website</a>
-        </article>
-
-        <article class="card reveal">
-          <h3>YouTube Thumbnail</h3><p>For creators and video channels.</p>
-          <div class="price">₹199 <small>/ starting</small></div>
-          <ul class="features"><li>Custom thumbnail design</li><li>Bold text and colours</li><li>Video-focused layout</li><li>High-quality export</li></ul>
-          <a class="btn btn-outline" href="#contact">Choose Thumbnail</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container about-grid">
-      <div class="about-visual"><div class="about-logo">A.</div></div>
-      <div class="about-copy reveal">
-        <span class="eyebrow">About Our Studio</span>
-        <h2>Creative thinking. <span class="gradient-text">Real impact.</span></h2>
-        <p>Aman Web Studio helps businesses, creators and individuals build a strong digital presence with clean design and practical solutions.</p>
-        <p>Our focus is simple: understand your idea, create a design that fits your goals, and make the experience easy for your customers.</p>
-        <div class="about-points">
-          <div class="about-point"><strong>01 / Creative</strong>Fresh visual ideas</div>
-          <div class="about-point"><strong>02 / Resp
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start Your Project ↗</a>
+            <a class="btn btn-outline" 
